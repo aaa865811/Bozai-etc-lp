@@ -724,24 +724,20 @@ section {
   background: linear-gradient(transparent 60%, #ffd400 60%);
 }
 
-/* ビジュアルプレースホルダー */
+/* ビジュアル画像 */
 .answer-visual {
   flex-shrink: 0;
   width: 380px;
-  height: 280px;
-  background: linear-gradient(135deg, #e8f0fa 0%, #d0dff0 100%);
   border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.answer-visual::after {
-  content: "ZOOM学習コンサル\Aビジュアル（差替予定）";
-  white-space: pre-wrap;
-  text-align: center;
-  font-size: var(--font-size-sm);
-  color: #8aa4c0;
+.answer-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* --- 3カード --- */
@@ -879,7 +875,6 @@ section {
 
   .answer-visual {
     width: 280px;
-    height: 220px;
   }
 
   .answer-card-title {
@@ -917,12 +912,7 @@ section {
 
   .answer-visual {
     width: 140px;
-    height: 140px;
     flex-shrink: 0;
-  }
-
-  .answer-visual::after {
-    font-size: 11px;
   }
 
   /* カード：縦並び＋横レイアウト */
