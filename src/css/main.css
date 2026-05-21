@@ -388,27 +388,129 @@ section {
 
 
 /* ============================================================
-   Section 2: Empathy
+   Section 2: Concerns（共感パート - 3つの不安）
    ============================================================ */
 
-.empathy {
-  background-color: var(--color-bg-alt);
+.concerns {
+  background-color: #f8f6f1;
+  padding: 100px 0;
 }
 
-.empathy-list {
-  max-width: 640px;
+.concerns-inner {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* 見出し */
+.concerns-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.concerns-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: var(--space-sm) auto 0;
+  border-radius: 2px;
+}
+
+/* カード群 */
+.concerns-cards {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.empathy-item {
+/* カード */
+.concerns-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
   background: #fff;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
-  border-left: 4px solid var(--color-primary);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s;
+}
+
+.concerns-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* アイコン */
+.concerns-card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* カード本文 */
+.concerns-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.concerns-card-category {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: var(--space-xs);
+}
+
+.concerns-card-text {
   font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.concerns-card-text em {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+/* 結びのコピー */
+.concerns-closing {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.concerns-closing-text {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.concerns-highlight {
+  color: var(--color-accent);
+}
+
+.concerns-arrow {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-xl);
+  color: var(--color-accent);
+  animation: concerns-bounce 1.5s ease infinite;
+}
+
+@keyframes concerns-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* ============================================================
@@ -797,6 +899,23 @@ section {
 
   section {
     padding: var(--space-xl) 0;
+  }
+
+  /* Concerns SP */
+  .concerns {
+    padding: 60px 0;
+  }
+
+  .concerns-heading {
+    font-size: 1.625rem;
+  }
+
+  .concerns-card {
+    padding: 24px;
+  }
+
+  .concerns-closing-text {
+    font-size: var(--font-size-lg);
   }
 
   .solution-points {
