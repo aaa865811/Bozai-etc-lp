@@ -1457,18 +1457,32 @@ section {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-/* 動画カード：左にサムネイル */
-.voice-card-thumb {
+/* 動画カード：縦型（上にサムネ、下にテキスト） */
+.voice-card--video {
+  flex-direction: column;
+  width: 280px;
+}
+
+.voice-card--video .voice-card-thumb {
   position: relative;
-  flex-shrink: 0;
-  width: 160px;
+  width: 100%;
+  aspect-ratio: 16/9;
   overflow: hidden;
 }
 
-.voice-card-thumb img {
+.voice-card--video .voice-card-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.voice-card--video {
+  border-left: none;
+  border-top: 4px solid #1e3a8a;
+}
+
+.voice-card--video .voice-card-info {
+  text-align: center;
 }
 
 /* 文字カード */
