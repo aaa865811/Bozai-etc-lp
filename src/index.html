@@ -7,7 +7,45 @@
   <meta name="description" content="ネットスクールの税理士講座。簿記論・財務諸表論・簿財一体型の3講座を比較して選べる統合ページです。">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body id="top">
+
+  <!-- ============================================================
+       Header：共通ヘッダー（sticky）
+       - ロゴ（左）・ナビ（中央）・CTAボタン（右）
+       - SP時はハンバーガーメニュー
+       ============================================================ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#top" class="header-logo">
+        <img src="assets/logo.png" alt="ネットスクール 税理士講座" width="180" height="48" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" id="header-nav">
+        <ul class="header-nav-list">
+          <li><a href="#features" class="header-nav-link">特長</a></li>
+          <li><a href="#comparison" class="header-nav-link">講座比較</a></li>
+          <li><a href="#curriculum" class="header-nav-link">カリキュラム</a></li>
+          <li><a href="#instructors" class="header-nav-link">講師</a></li>
+          <li><a href="#pricing" class="header-nav-link">料金</a></li>
+          <li><a href="#faq" class="header-nav-link">FAQ</a></li>
+        </ul>
+        <div class="header-nav-cta">
+          <a href="#cta" class="btn btn-secondary btn-sm">資料請求</a>
+          <a href="#cta" class="btn btn-primary btn-sm">申し込む</a>
+        </div>
+      </nav>
+
+      <div class="header-sp-actions">
+        <a href="#cta" class="btn btn-primary btn-sm">申し込む</a>
+        <button class="header-burger" id="header-burger" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="header-burger-line"></span>
+          <span class="header-burger-line"></span>
+          <span class="header-burger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="header-overlay" id="header-overlay"></div>
+  </header>
 
   <!-- ============================================================
        Section 1: ファーストビュー（FV）
@@ -51,7 +89,7 @@
        - 一体型学習のメリット（時間短縮・理解の深化）
        - 他校との差別化ポイント
        ============================================================ -->
-  <section id="solution" class="solution">
+  <section id="features" class="solution">
     <div class="container">
       <h2 class="section-title">簿財一体型なら、学習効率が違います。</h2>
       <p class="solution-lead">簿記論と財務諸表論は、学習内容の約50%が共通。一体型で学ぶことで、重複を省き、効率的に合格を目指せます。</p>
