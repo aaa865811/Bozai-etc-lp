@@ -53,8 +53,8 @@
         badges(t.subjects) +
         '<p class="voice-card-attr">' + esc(attr(t)) + '</p>' +
         '<p class="voice-card-comment">' + esc(t.comment_short) + '</p>' +
+        (t.comment_full ? '<span class="voice-card-more">続きを読む →</span>' : '') +
       '</div>' +
-      (t.comment_full ? '<span class="voice-card-more">続きを読む →</span>' : '') +
     '</div>';
   }
 
