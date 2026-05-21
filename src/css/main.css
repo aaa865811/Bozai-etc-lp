@@ -182,41 +182,6 @@ section {
   display: block;
 }
 
-.fv-cta {
-  display: flex;
-  gap: var(--space-sm);
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: var(--space-lg) var(--space-sm);
-  background: linear-gradient(to bottom, rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.95));
-}
-
-/* FV用ボタン：白背景+青文字の枠線ボタン */
-.btn-outline {
-  background-color: #fff;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-primary-light);
-}
-
-/* PC: CTAを画像の下端に重ねて表示 */
-@media (min-width: 1024px) {
-  .fv {
-    position: relative;
-  }
-
-  .fv-cta {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: var(--space-md) var(--space-sm) var(--space-lg);
-    background: linear-gradient(to top, rgba(0, 40, 80, 0.8) 0%, transparent 100%);
-  }
-}
 
 /* ============================================================
    Section 2: Empathy
@@ -668,13 +633,6 @@ section {
     font-size: var(--font-size-base);
     padding: 0.85em 1.5em;
     width: 100%;
-  }
-
-  .fv-cta {
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    background: linear-gradient(to bottom, rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.95));
   }
 
   .cta-buttons {
