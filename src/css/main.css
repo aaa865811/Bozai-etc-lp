@@ -395,18 +395,23 @@ section {
 }
 
 /* --- Band (グラデーション帯) --- */
+/* 修正3：右端を画像背景色に合わせてつなげる */
 .concerns-band {
-  background: linear-gradient(to right, #e8f0fa 0%, #f5f9fe 70%, #ffffff 100%);
+  background: linear-gradient(to right, #e8f0fa 0%, #f5f9fe 60%, #d8e4f0 100%);
   width: 100%;
+  position: relative;
 }
 
 .concerns-band-inner {
   display: grid;
-  grid-template-columns: 30% 50% 20%;
-  max-width: 1400px;
+  /* 修正3：画像をabsolute化したのでgridは2カラムに、右にpadding確保 */
+  grid-template-columns: 30% 1fr;
+  /* 修正2：max-width拡大でカードに余裕を持たせる */
+  max-width: 1500px;
   margin: 0 auto;
   min-height: 320px;
   align-items: stretch;
+  padding-right: 300px;
 }
 
 /* --- 左：見出しエリア --- */
@@ -418,17 +423,17 @@ section {
   overflow: hidden;
 }
 
+/* 修正1：ANXIETY英字の被り解消 - 淡く＋右上オフセット */
 .concerns-en {
   position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  font-size: 100px;
+  top: -20px;
+  left: 60px;
+  font-size: 80px;
   font-weight: 900;
-  color: #c5d5ea;
+  color: #dce7f3;
   letter-spacing: -2px;
   text-transform: uppercase;
-  opacity: 0.7;
+  opacity: 0.5;
   z-index: 0;
   line-height: 1;
   white-space: nowrap;
@@ -472,7 +477,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 20px;
+  /* 修正2：パディング左右を16pxに調整 */
+  padding: 24px 16px;
   border-right: 1px solid #ddd;
 }
 
@@ -507,12 +513,12 @@ section {
   border-top: 8px solid #1e3a8a;
 }
 
-/* カード本文 */
+/* 修正2：カード本文の可読性向上 */
 .concerns-card-text {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 2.0;
   color: #1e3a8a;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -521,8 +527,13 @@ section {
   background: linear-gradient(transparent 70%, #ffd400 70%);
 }
 
-/* --- 右：男性写真 --- */
+/* --- 修正3：右側の男性画像を右端ピッタリに配置 --- */
 .concerns-photo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -530,7 +541,8 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* 修正3：人物の顔が見えるよう左寄りを表示 */
+  object-position: left center;
   display: block;
 }
 
@@ -539,7 +551,7 @@ section {
    ================================================ */
 @media (max-width: 1023px) and (min-width: 768px) {
   .concerns-en {
-    font-size: 80px;
+    font-size: 60px;
   }
 
   .concerns-heading {
@@ -547,11 +559,16 @@ section {
   }
 
   .concerns-card-text {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .concerns-band-inner {
-    grid-template-columns: 28% 50% 22%;
+    grid-template-columns: 30% 1fr;
+    padding-right: 240px;
+  }
+
+  .concerns-photo {
+    width: 220px;
   }
 }
 
@@ -571,6 +588,7 @@ section {
     display: flex;
     flex-direction: column;
     min-height: auto;
+    padding-right: 0;
   }
 
   /* 見出し */
@@ -596,8 +614,9 @@ section {
     margin: 10px auto 0;
   }
 
-  /* 写真 */
+  /* 写真：absoluteを解除して通常フローに */
   .concerns-photo {
+    position: static;
     width: 100%;
     height: 200px;
   }
