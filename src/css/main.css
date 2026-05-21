@@ -387,130 +387,244 @@ section {
 }
 
 
-/* ============================================================
-   Section 2: Concerns（共感パート - 3つの不安）
-   ============================================================ */
+/* === Section 2: Concerns === */
 
-.concerns {
-  background-color: #f8f6f1;
-  padding: 100px 0;
+.concerns-section {
+  padding: 80px 0;
+  background: #fff;
 }
 
-.concerns-inner {
-  max-width: 1000px;
+/* --- Band (グラデーション帯) --- */
+.concerns-band {
+  background: linear-gradient(to right, #e8f0fa 0%, #f5f9fe 70%, #ffffff 100%);
+  width: 100%;
+}
+
+.concerns-band-inner {
+  display: grid;
+  grid-template-columns: 30% 50% 20%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--space-sm);
+  min-height: 320px;
+  align-items: stretch;
 }
 
-/* 見出し */
+/* --- 左：見出しエリア --- */
+.concerns-heading-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px 24px 40px 40px;
+  overflow: hidden;
+}
+
+.concerns-en {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 100px;
+  font-weight: 900;
+  color: #c5d5ea;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  z-index: 0;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
 .concerns-heading {
-  font-size: 2.25rem;
+  position: relative;
+  z-index: 1;
+  font-size: 42px;
   font-weight: 700;
-  color: #1e3a8a;
-  text-align: center;
-  margin-bottom: var(--space-lg);
+  color: #1a1a1a;
+  line-height: 1.4;
 }
 
+.concerns-heading-accent {
+  color: #1e3a8a;
+}
+
+/* 見出しの黄色アンダーライン */
 .concerns-heading::after {
   content: "";
   display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--color-accent);
-  margin: var(--space-sm) auto 0;
-  border-radius: 2px;
+  width: 180px;
+  height: 6px;
+  background: #ffd400;
+  margin-top: 12px;
+  border-radius: 3px;
 }
 
-/* カード群 */
+/* --- 中央：3カード --- */
 .concerns-cards {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  max-width: 720px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  padding: 24px 0;
 }
 
-/* カード */
 .concerns-card {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  background: #fff;
-  padding: 32px;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.2s;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px;
+  border-right: 1px solid #ddd;
 }
 
-.concerns-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+.concerns-card:last-child {
+  border-right: none;
 }
 
-/* アイコン */
+/* アイコン（円形＋吹き出し尻尾） */
 .concerns-card-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  position: relative;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: var(--color-primary-light);
+  background: #1e3a8a;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  line-height: 1;
+  flex-shrink: 0;
+  margin-bottom: 24px;
+}
+
+.concerns-card-icon::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #1e3a8a;
 }
 
 /* カード本文 */
-.concerns-card-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.concerns-card-category {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: #1e3a8a;
-  margin-bottom: var(--space-xs);
-}
-
 .concerns-card-text {
-  font-size: var(--font-size-lg);
+  font-size: 16px;
   line-height: 1.8;
-  color: var(--color-text);
-}
-
-.concerns-card-text em {
-  font-style: italic;
-  font-size: 1.2em;
-}
-
-/* 結びのコピー */
-.concerns-closing {
+  color: #1e3a8a;
+  font-weight: 500;
   text-align: center;
-  margin-top: var(--space-lg);
 }
 
-.concerns-closing-text {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--color-text);
+/* 黄色マーカー */
+.concerns-marker {
+  background: linear-gradient(transparent 70%, #ffd400 70%);
 }
 
-.concerns-highlight {
-  color: var(--color-accent);
+/* --- 右：男性写真 --- */
+.concerns-photo {
+  overflow: hidden;
 }
 
-.concerns-arrow {
+.concerns-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
-  margin-top: var(--space-sm);
-  font-size: var(--font-size-xl);
-  color: var(--color-accent);
-  animation: concerns-bounce 1.5s ease infinite;
 }
 
-@keyframes concerns-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+/* ================================================
+   Concerns - Tablet (768px〜1023px)
+   ================================================ */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .concerns-en {
+    font-size: 80px;
+  }
+
+  .concerns-heading {
+    font-size: 36px;
+  }
+
+  .concerns-card-text {
+    font-size: 15px;
+  }
+
+  .concerns-band-inner {
+    grid-template-columns: 28% 50% 22%;
+  }
+}
+
+/* ================================================
+   Concerns - SP (767px以下)
+   ================================================ */
+@media (max-width: 767px) {
+  .concerns-section {
+    padding: 48px 0;
+  }
+
+  .concerns-band {
+    background: linear-gradient(to bottom, #e8f0fa 0%, #f5f9fe 100%);
+  }
+
+  .concerns-band-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  /* 見出し */
+  .concerns-heading-area {
+    padding: 32px 20px 16px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .concerns-en {
+    font-size: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .concerns-heading {
+    font-size: 28px;
+  }
+
+  .concerns-heading::after {
+    width: 120px;
+    height: 5px;
+    margin: 10px auto 0;
+  }
+
+  /* 写真 */
+  .concerns-photo {
+    width: 100%;
+    height: 200px;
+  }
+
+  .concerns-photo-img {
+    object-position: center top;
+  }
+
+  /* カード：縦並び */
+  .concerns-cards {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .concerns-card {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+  }
+
+  .concerns-card:last-child {
+    border-bottom: none;
+  }
+
+  .concerns-card-text {
+    font-size: 14px;
+  }
 }
 
 /* ============================================================
@@ -899,23 +1013,6 @@ section {
 
   section {
     padding: var(--space-xl) 0;
-  }
-
-  /* Concerns SP */
-  .concerns {
-    padding: 60px 0;
-  }
-
-  .concerns-heading {
-    font-size: 1.625rem;
-  }
-
-  .concerns-card {
-    padding: 24px;
-  }
-
-  .concerns-closing-text {
-    font-size: var(--font-size-lg);
   }
 
   .solution-points {
