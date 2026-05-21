@@ -2119,234 +2119,385 @@ section {
   .courses-benefits-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
 }
 
-/* ============================================================
-   Curriculum
-   ============================================================ */
+/* === Section 7: Curriculum === */
 
-.curriculum-steps {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.curriculum-step {
-  padding: var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: #fff;
-}
-
-.curriculum-step-num {
-  display: inline-block;
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.curriculum-step-title {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-xs);
-}
-
-.curriculum-step-text {
-  color: var(--color-text-light);
-}
-
-/* ============================================================
-   Section 6: Instructors
-   ============================================================ */
-
-.instructors {
-  background-color: var(--color-bg-alt);
-}
-
-.instructors-list {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.instructor-card {
-  background: #fff;
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  text-align: center;
-  max-width: 320px;
-}
-
-.instructor-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--color-border);
-  margin: 0 auto var(--space-sm);
-}
-
-.instructor-name {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-xs);
-}
-
-.instructor-role {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-sm);
-}
-
-.instructor-text {
-  color: var(--color-text-light);
-}
-
-/* ============================================================
-   Section 7: Materials
-   ============================================================ */
-
-.materials-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-}
-
-.materials-item {
-  background: var(--color-bg-alt);
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-}
-
-.materials-item-title {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-xs);
-  color: var(--color-primary-dark);
-}
-
-.materials-item-text {
-  color: var(--color-text-light);
-}
-
-/* ============================================================
-   Section 8: Support
-   ============================================================ */
-
-.support {
-  background-color: var(--color-bg-alt);
-}
-
-.support-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-}
-
-.support-item {
-  background: #fff;
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  text-align: center;
-}
-
-.support-item-title {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-xs);
-  color: var(--color-primary-dark);
-}
-
-.support-item-text {
-  color: var(--color-text-light);
-}
-
-/* ============================================================
-   Section 9: Voices
-   ============================================================ */
-
-.voices-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-}
-
-.voice-card {
-  background: var(--color-bg-alt);
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  border-left: 4px solid var(--color-primary);
-}
-
-.voice-text {
-  font-size: var(--font-size-base);
-  margin-bottom: var(--space-sm);
-  line-height: 1.9;
-}
-
-.voice-author {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
-
-/* ============================================================
-   Section 10: Pricing
-   ============================================================ */
-
-.pricing {
-  background-color: var(--color-bg-alt);
-}
-
-.pricing-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  align-items: start;
-}
-
-.pricing-card {
-  background: #fff;
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  text-align: center;
-  border: 1px solid var(--color-border);
-}
-
-.pricing-card-highlight {
-  border: 2px solid var(--color-accent);
+.curriculum-section {
   position: relative;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f7ff 100%);
+  padding: 80px 0 100px;
+  overflow: hidden;
 }
 
-.pricing-card-title {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-sm);
-  color: var(--color-primary-dark);
+.cur-en {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 120px;
+  font-weight: 900;
+  color: #dce7f3;
+  opacity: 0.5;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
 }
 
-.pricing-card-price {
-  font-size: var(--font-size-2xl);
+.cur-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.cur-heading {
+  font-size: 42px;
   font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 1.5;
   margin-bottom: var(--space-sm);
 }
 
-.pricing-card-tax {
-  font-size: var(--font-size-sm);
-  font-weight: 400;
+.cur-marker {
+  color: #1e3a8a;
+  background: linear-gradient(transparent 60%, #ffd400 60%);
 }
 
-.pricing-card-features {
-  text-align: left;
-  margin-bottom: var(--space-md);
+.cur-sub {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+/* --- 4ステップフロー --- */
+.cur-flow {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-xl);
+  flex-wrap: nowrap;
 }
 
-.pricing-card-features li::before {
-  content: "\2713 ";
-  color: var(--color-primary);
+.cur-step {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  flex: 1;
+  max-width: 200px;
+}
+
+.cur-step-badges {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.cur-step-num {
+  font-size: 12px;
   font-weight: 700;
+  color: #fff;
+  background: #1e3a8a;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.cur-step-period {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.cur-step-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.cur-step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.cur-step-desc {
+  font-size: 13px;
+  color: #888;
+}
+
+.cur-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3a8a;
+  padding-top: 60px;
+  flex-shrink: 0;
+}
+
+/* ゴール */
+.cur-step--goal {
+  background: linear-gradient(135deg, #fffbe6, #fff3cc);
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 20px rgba(212,175,55,0.2);
+  max-width: 180px;
+}
+
+.cur-goal-period {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  padding: 3px 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.cur-goal-icon {
+  margin: 0 auto 8px;
+}
+
+.cur-goal-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+/* --- ZOOMタイムライン --- */
+.cur-zoom-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: #f8faff;
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: 16px 24px;
+  margin-bottom: var(--space-md);
+}
+
+.cur-zoom-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e3a8a;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cur-zoom-icon {
+  font-size: 20px;
+}
+
+.cur-zoom-points {
+  display: flex;
+  gap: var(--space-sm);
+  flex: 1;
+  justify-content: space-around;
+}
+
+.cur-zoom-point {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--color-accent);
+}
+
+.cur-zoom-note {
+  font-size: 13px;
+  color: #1e3a8a;
+  font-weight: 600;
+  background: #e8f0fa;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+/* --- 強調帯 --- */
+.cur-zoom-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: #fffbe6;
+  border-left: 5px solid #1e3a8a;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: var(--space-xl);
+}
+
+.cur-zoom-banner-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cur-zoom-banner-main {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.cur-marker-strong {
+  background: linear-gradient(transparent 50%, #ffd400 50%);
+  font-weight: 800;
+}
+
+.cur-zoom-banner-sub {
+  font-size: 14px;
+  color: #555;
+}
+
+/* --- INPUT / OUTPUT --- */
+.cur-io {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.cur-io-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #fff;
+  border-top: 4px solid #1e3a8a;
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.cur-io-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cur-io-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 2px;
+}
+
+.cur-io-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+/* --- CTA --- */
+.cur-cta {
+  text-align: center;
+}
+
+.cur-cta-caption {
+  font-size: 15px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.cur-cta-btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  padding: 16px 48px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(255,122,0,0.3);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cur-cta-btn:hover {
+  background: #e66a00;
+  transform: translateY(-2px);
+}
+
+/* --- Curriculum: Tablet --- */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .cur-en { font-size: 80px; }
+  .cur-heading { font-size: 36px; }
+  .cur-step { max-width: 160px; padding: 16px 12px; }
+  .cur-step-icon { width: 56px; height: 56px; }
+  .cur-step-title { font-size: 16px; }
+  .cur-zoom-line { flex-wrap: wrap; }
+  .cur-zoom-note { white-space: normal; }
+}
+
+/* --- Curriculum: SP --- */
+@media (max-width: 767px) {
+  .curriculum-section { padding: 48px 0 64px; }
+  .cur-en { font-size: 60px; top: 16px; left: 16px; }
+  .cur-heading { font-size: 28px; }
+  .cur-sub { font-size: 15px; }
+
+  .cur-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cur-step { max-width: 280px; width: 100%; }
+  .cur-step--goal { max-width: 280px; }
+
+  .cur-arrow {
+    padding-top: 0;
+    transform: rotate(90deg);
+    font-size: 20px;
+  }
+
+  .cur-zoom-line {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .cur-zoom-points { flex-wrap: wrap; justify-content: center; }
+  .cur-zoom-note { white-space: normal; }
+
+  .cur-zoom-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cur-zoom-banner-main { font-size: 16px; }
+
+  .cur-io { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
-   Section 11: FAQ
+   FAQ
    ============================================================ */
 
 .faq-list {
@@ -2430,23 +2581,6 @@ section {
     padding: var(--space-xl) 0;
   }
 
-  .materials-content {
-    grid-template-columns: 1fr;
-  }
-
-  .support-items {
-    grid-template-columns: 1fr;
-  }
-
-  .voices-list {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing-cards {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
 }
 
 /* Mobile */
