@@ -396,10 +396,12 @@ section {
 
 /* --- Band (グラデーション帯) --- */
 /* 修正3：右端を画像背景色に合わせてつなげる */
+/* 修正：overflow hiddenで画像の帯外はみ出しをカット */
 .concerns-band {
   background: linear-gradient(to right, #e8f0fa 0%, #f5f9fe 60%, #d8e4f0 100%);
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .concerns-band-inner {
@@ -411,29 +413,30 @@ section {
   margin: 0 auto;
   min-height: 320px;
   align-items: stretch;
-  padding-right: 300px;
+  padding-right: 370px;
 }
 
 /* --- 左：見出しエリア --- */
+/* 修正：overflow visibleで英字が切れないようにする */
 .concerns-heading-area {
   position: relative;
   display: flex;
   align-items: center;
   padding: 40px 24px 40px 40px;
-  overflow: hidden;
+  overflow: visible;
 }
 
-/* 修正1：ANXIETY英字の被り解消 - 淡く＋右上オフセット */
+/* 修正：ANXIETY英字 - 見出しの上に薄く重ねて一体化 */
 .concerns-en {
   position: absolute;
-  top: -20px;
-  left: 60px;
-  font-size: 80px;
+  top: -15px;
+  left: -10px;
+  font-size: 70px;
   font-weight: 900;
-  color: #dce7f3;
-  letter-spacing: -2px;
+  color: #c8d7e8;
+  letter-spacing: -3px;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: 0.6;
   z-index: 0;
   line-height: 1;
   white-space: nowrap;
@@ -527,12 +530,12 @@ section {
   background: linear-gradient(transparent 70%, #ffd400 70%);
 }
 
-/* --- 修正3：右側の男性画像を右端ピッタリに配置 --- */
+/* 修正：男性画像を帯の右端ピッタリに配置、はみ出しをカット */
 .concerns-photo {
   position: absolute;
   right: 0;
   top: 0;
-  width: 280px;
+  width: 350px;
   height: 100%;
   overflow: hidden;
 }
@@ -541,8 +544,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 修正3：人物の顔が見えるよう左寄りを表示 */
-  object-position: left center;
+  object-position: center center;
   display: block;
 }
 
@@ -564,11 +566,11 @@ section {
 
   .concerns-band-inner {
     grid-template-columns: 30% 1fr;
-    padding-right: 240px;
+    padding-right: 260px;
   }
 
   .concerns-photo {
-    width: 220px;
+    width: 240px;
   }
 }
 
@@ -600,8 +602,9 @@ section {
 
   .concerns-en {
     font-size: 50px;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
   }
 
   .concerns-heading {
