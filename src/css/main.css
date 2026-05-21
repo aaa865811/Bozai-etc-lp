@@ -58,8 +58,8 @@ table {
   --color-primary-light: #e8f0fa;
 
   /* CTA Accent */
-  --color-accent: #e8590c;        /* CTAボタン用アクセント（オレンジ） */
-  --color-accent-dark: #c44b0a;
+  --color-accent: #ff7a00;        /* CTAボタン用アクセント（オレンジ） */
+  --color-accent-dark: #e06a00;
   --color-accent-light: #fff4ef;
 
   /* Neutral */
@@ -163,26 +163,23 @@ section {
 }
 
 /* ============================================================
-   Section 1: FV
+   Section 1: FV（メインビジュアル画像ベース）
    ============================================================ */
 
 .fv {
-  background-color: var(--color-primary);
-  color: #fff;
-  text-align: center;
-  padding: var(--space-2xl) 0;
+  position: relative;
+  padding: 0;
 }
 
-.fv-title {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
+.fv-visual {
+  width: 100%;
+  line-height: 0; /* img下の隙間を除去 */
 }
 
-.fv-subtitle {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-lg);
-  opacity: 0.9;
+.fv-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .fv-cta {
@@ -190,15 +187,35 @@ section {
   gap: var(--space-sm);
   justify-content: center;
   flex-wrap: wrap;
+  padding: var(--space-lg) var(--space-sm);
+  background: linear-gradient(to bottom, rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.95));
 }
 
-.fv .btn-secondary {
-  color: #fff;
-  border-color: #fff;
+/* FV用ボタン：白背景+青文字の枠線ボタン */
+.btn-outline {
+  background-color: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
-.fv .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* PC: CTAを画像の下端に重ねて表示 */
+@media (min-width: 1024px) {
+  .fv {
+    position: relative;
+  }
+
+  .fv-cta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md) var(--space-sm) var(--space-lg);
+    background: linear-gradient(to top, rgba(0, 40, 80, 0.8) 0%, transparent 100%);
+  }
 }
 
 /* ============================================================
@@ -656,6 +673,8 @@ section {
   .fv-cta {
     flex-direction: column;
     align-items: center;
+    position: static;
+    background: linear-gradient(to bottom, rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.95));
   }
 
   .cta-buttons {
