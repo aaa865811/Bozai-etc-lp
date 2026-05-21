@@ -491,7 +491,7 @@ section {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .concerns-card-icon::after {
