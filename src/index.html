@@ -722,18 +722,106 @@
   </section>
 
   <!-- ============================================================
-       Section 12: 最終CTA
-       - 最後の申込誘導
-       - 申込ボタン・資料請求ボタン
-       - 期間限定キャンペーン表示エリア
+       Section 9: 最終CTA
+       - 3コース選択カード
+       - サブアクション＋安心要素＋お問い合わせ
        ============================================================ -->
-  <section id="cta" class="cta">
-    <div class="container">
-      <h2 class="cta-title">まずは無料で、講座の内容を確認してみませんか？</h2>
-      <p class="cta-text">資料請求は無料です。お気軽にお申し込みください。</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary btn-lg">講座を申し込む</a>
-        <a href="#" class="btn btn-secondary btn-lg">無料で資料請求する</a>
+  <section id="final-cta" class="final-cta-section">
+    <span class="fcta-en" aria-hidden="true">START</span>
+    <div class="fcta-stars" aria-hidden="true"></div>
+
+    <div class="fcta-inner">
+      <h2 class="fcta-heading"><span class="fcta-heading-sm">今日が、</span><br>新しいスタートライン。</h2>
+      <p class="fcta-sub">迷っている時間も、勉強できる時間。<br>ZOOM学習コンサルの講師が、あなたを待っています。</p>
+
+      <!-- 3コースカード -->
+      <div class="fcta-cards">
+        <div class="fcta-card">
+          <div class="fcta-card-icon"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><rect x="4" y="6" width="24" height="20" rx="2" stroke="#fff" stroke-width="2"/><line x1="10" y1="12" x2="22" y2="12" stroke="#fff" stroke-width="2"/><line x1="10" y1="17" x2="18" y2="17" stroke="#fff" stroke-width="1.5"/></svg></div>
+          <h3 class="fcta-card-name">税理士簿記論コース</h3>
+          <hr class="fcta-card-hr">
+          <p class="fcta-card-price">145,600<span>円〜</span></p>
+          <p class="fcta-card-tax">（税込・教材込）</p>
+          <ul class="fcta-card-list">
+            <li>ZOOM学習コンサル付き</li>
+            <li>24時間オンデマンド</li>
+            <li>学び舎コミュニティ</li>
+          </ul>
+          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_bokiron_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--outline" data-course="bokiron">詳細・お申込みへ →</a>
+        </div>
+
+        <div class="fcta-card">
+          <div class="fcta-card-icon"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M8 4h12l6 6v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="#fff" stroke-width="2"/><path d="M20 4v6h6" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3 class="fcta-card-name">税理士財務諸表論コース</h3>
+          <hr class="fcta-card-hr">
+          <p class="fcta-card-price">145,600<span>円〜</span></p>
+          <p class="fcta-card-tax">（税込・教材込）</p>
+          <ul class="fcta-card-list">
+            <li>ZOOM学習コンサル付き</li>
+            <li>24時間オンデマンド</li>
+            <li>学び舎コミュニティ</li>
+          </ul>
+          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_zaih_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--outline" data-course="zaihyo">詳細・お申込みへ →</a>
+        </div>
+
+        <div class="fcta-card fcta-card--recommend">
+          <div class="fcta-card-ribbon">最もおすすめ</div>
+          <div class="fcta-card-icon fcta-card-icon--accent"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><circle cx="12" cy="16" r="8" stroke="#fff" stroke-width="2"/><circle cx="20" cy="16" r="8" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3 class="fcta-card-name">簿財一体型コース</h3>
+          <hr class="fcta-card-hr">
+          <p class="fcta-card-price fcta-card-price--accent">201,700<span>円〜</span></p>
+          <p class="fcta-card-tax">（税込・教材込）</p>
+          <div class="fcta-card-savings">別々より<strong>約89,500円お得!</strong></div>
+          <ul class="fcta-card-list">
+            <li>2科目同時合格を実現</li>
+            <li>ZOOM学習コンサル付き</li>
+            <li>学習効率50%UP</li>
+            <li>合格まで安心制度</li>
+          </ul>
+          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_bozai_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--primary fcta-pulse" data-course="bozai">今すぐお申し込み →</a>
+        </div>
+      </div>
+
+      <!-- サブアクション -->
+      <div class="fcta-sub-actions">
+        <a href="#" class="fcta-sub-btn">📄 資料請求（無料）</a>
+        <a href="#" class="fcta-sub-btn">▶ 無料体験講義を見る</a>
+      </div>
+
+      <!-- 安心要素 -->
+      <div class="fcta-trust">
+        <div class="fcta-trust-item">
+          <div class="fcta-trust-icon">🛡️</div>
+          <p class="fcta-trust-name">合格まで安心制度</p>
+          <p class="fcta-trust-desc">再受講割引あり</p>
+        </div>
+        <div class="fcta-trust-item">
+          <div class="fcta-trust-icon">💳</div>
+          <p class="fcta-trust-name">分割払い対応</p>
+          <p class="fcta-trust-desc">無理のないお支払い</p>
+        </div>
+        <div class="fcta-trust-item">
+          <div class="fcta-trust-icon">📞</div>
+          <p class="fcta-trust-name">ZOOM学習コンサル</p>
+          <p class="fcta-trust-desc">いつでも相談OK</p>
+        </div>
+      </div>
+
+      <!-- お問い合わせ -->
+      <hr class="fcta-divider">
+      <div class="fcta-contact">
+        <div class="fcta-contact-item">
+          <span class="fcta-contact-icon">📞</span>
+          <p class="fcta-contact-label">お電話でのお問い合わせ</p>
+          <p class="fcta-contact-tel">0120-979-919</p>
+          <p class="fcta-contact-note">受付時間：10:00-18:00（平日）</p>
+        </div>
+        <div class="fcta-contact-item">
+          <span class="fcta-contact-icon">📧</span>
+          <p class="fcta-contact-label">メールでのお問い合わせ</p>
+          <a href="#" class="fcta-contact-mail-btn">メールでお問い合わせ →</a>
+          <p class="fcta-contact-note">24時間受付</p>
+        </div>
       </div>
     </div>
   </section>

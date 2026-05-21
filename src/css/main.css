@@ -2829,42 +2829,418 @@ section {
   .faq-support-grid { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   CTA
-   ============================================================ */
+/* === Section 9: Final CTA === */
 
-.cta {
-  background-color: var(--color-primary);
+.final-cta-section {
+  position: relative;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2b5ba8 100%);
   color: #fff;
-  text-align: center;
+  padding: 80px 0;
+  overflow: hidden;
 }
 
-.cta-title {
-  font-size: var(--font-size-2xl);
+.fcta-en {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 160px;
+  font-weight: 900;
+  color: #ffd700;
+  opacity: 0.15;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 星のキラキラ */
+.fcta-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fcta-stars::before,
+.fcta-stars::after {
+  content: "★ ✦ ★ ✧ ★ ✦ ★ ✧ ★ ✦ ★ ✧ ★";
+  position: absolute;
+  font-size: 14px;
+  color: #ffd700;
+  opacity: 0.2;
+  white-space: nowrap;
+  letter-spacing: 60px;
+}
+
+.fcta-stars::before {
+  top: 15%;
+  left: -20px;
+  transform: rotate(-5deg);
+}
+
+.fcta-stars::after {
+  bottom: 20%;
+  right: -20px;
+  transform: rotate(3deg);
+  opacity: 0.15;
+}
+
+.fcta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* 見出し */
+.fcta-heading {
+  text-align: center;
+  font-size: 48px;
   font-weight: 700;
+  line-height: 1.4;
   margin-bottom: var(--space-sm);
 }
 
-.cta-text {
-  font-size: var(--font-size-lg);
-  opacity: 0.9;
+.fcta-heading-sm {
+  font-size: 28px;
+  font-weight: 400;
+  display: block;
+}
+
+.fcta-heading::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 6px;
+  background: #ffd400;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+.fcta-sub {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: var(--space-xl);
+}
+
+/* --- 3カード --- */
+.fcta-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
   margin-bottom: var(--space-lg);
 }
 
-.cta-buttons {
+.fcta-card {
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.fcta-card-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1e3a8a;
   display: flex;
-  gap: var(--space-sm);
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  margin: 0 auto var(--space-sm);
 }
 
-.cta .btn-secondary {
+.fcta-card-icon--accent {
+  background: var(--color-accent);
+  width: 80px;
+  height: 80px;
+}
+
+.fcta-card-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: var(--space-xs);
+}
+
+.fcta-card-hr {
+  border: none;
+  border-top: 1px dashed #ddd;
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.fcta-card-price {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.fcta-card-price span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.fcta-card-price--accent {
+  font-size: 40px;
+  color: var(--color-accent);
+}
+
+.fcta-card-tax {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: var(--space-sm);
+}
+
+.fcta-card-savings {
+  background: #ffd400;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: var(--space-sm);
+}
+
+.fcta-card-list {
+  text-align: left;
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fcta-card-list li {
+  font-size: 14px;
+  color: #444;
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.fcta-card-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.fcta-card-btn {
+  display: block;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.fcta-card-btn--outline {
+  background: #fff;
+  color: #1e3a8a;
+  border: 2px solid #1e3a8a;
+}
+
+.fcta-card-btn--outline:hover {
+  background: #e8f0fa;
+}
+
+.fcta-card-btn--primary {
+  background: var(--color-accent);
   color: #fff;
-  border-color: #fff;
+  font-size: 18px;
+  padding: 18px 32px;
+  box-shadow: 0 4px 16px rgba(255,122,0,0.4);
 }
 
-.cta .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+.fcta-card-btn--primary:hover {
+  background: #e66a00;
+  transform: translateY(-2px);
+}
+
+/* パルスアニメーション */
+.fcta-pulse {
+  animation: fcta-pulse 2s ease-in-out infinite;
+}
+
+@keyframes fcta-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(255,122,0,0.4); }
+  50% { box-shadow: 0 4px 24px rgba(255,122,0,0.7); }
+}
+
+/* おすすめカード */
+.fcta-card--recommend {
+  background: linear-gradient(to bottom, #ffffff 0%, #fff5ec 100%);
+  border-top: 6px solid var(--color-accent);
+  box-shadow: 0 12px 32px rgba(255,122,0,0.3);
+  transform: translateY(-10px);
+}
+
+.fcta-card-ribbon {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 24px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* --- サブアクション --- */
+.fcta-sub-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.fcta-sub-btn {
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: background 0.2s;
+}
+
+.fcta-sub-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* --- 安心要素 --- */
+.fcta-trust {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.fcta-trust-item {
+  text-align: center;
+}
+
+.fcta-trust-icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.fcta-trust-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.fcta-trust-desc {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* --- お問い合わせ --- */
+.fcta-divider {
+  border: none;
+  border-top: 1px solid rgba(255,215,0,0.3);
+  margin-bottom: var(--space-lg);
+}
+
+.fcta-contact {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+}
+
+.fcta-contact-item {
+  text-align: center;
+}
+
+.fcta-contact-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.fcta-contact-label {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.fcta-contact-tel {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.fcta-contact-note {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.fcta-contact-mail-btn {
+  display: inline-block;
+  background: #fff;
+  color: #1e3a8a;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+
+.fcta-contact-mail-btn:hover {
+  background: #e8f0fa;
+}
+
+/* --- Final CTA: Tablet --- */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .fcta-en { font-size: 120px; }
+  .fcta-heading { font-size: 40px; }
+  .fcta-card--recommend { transform: translateY(-5px); }
+}
+
+/* --- Final CTA: SP --- */
+@media (max-width: 767px) {
+  .final-cta-section { padding: 50px 0; }
+  .fcta-en { font-size: 80px; top: 10px; left: 16px; }
+  .fcta-heading { font-size: 32px; }
+  .fcta-heading-sm { font-size: 20px; }
+  .fcta-sub { font-size: 14px; }
+
+  .fcta-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fcta-card--recommend { order: -1; transform: none; }
+  .fcta-card { padding: 24px 20px; }
+  .fcta-card-price { font-size: 30px; }
+  .fcta-card-price--accent { font-size: 34px; }
+
+  .fcta-sub-actions { flex-direction: column; align-items: center; }
+  .fcta-sub-btn { width: 100%; max-width: 300px; text-align: center; }
+
+  .fcta-trust { gap: var(--space-md); }
+  .fcta-trust-name { font-size: 13px; }
+
+  .fcta-contact { flex-direction: column; gap: var(--space-lg); }
+  .fcta-contact-tel { font-size: 26px; }
 }
 
 /* ============================================================
@@ -2902,8 +3278,4 @@ section {
     width: 100%;
   }
 
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
 }
