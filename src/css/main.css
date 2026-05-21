@@ -952,8 +952,222 @@ section {
   }
 }
 
+/* === Section 4: Reasons === */
+
+.reasons-section {
+  position: relative;
+  background: linear-gradient(to bottom, #f0f7ff 0%, #ffffff 100%);
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+/* 背景英字 */
+.reasons-en {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 120px;
+  font-weight: 900;
+  color: #dce7f3;
+  opacity: 0.5;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.reasons-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* 見出し */
+.reasons-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.reasons-heading-accent {
+  color: #1e3a8a;
+  background: linear-gradient(transparent 60%, #ffd400 60%);
+}
+
+/* リード文（手書き風） */
+.reasons-lead {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  color: #1e3a8a;
+  margin-bottom: var(--space-md);
+  letter-spacing: 1px;
+}
+
+/* 本文 */
+.reasons-intro {
+  text-align: center;
+  font-size: 16px;
+  line-height: 2.0;
+  color: #444;
+  margin-bottom: var(--space-xl);
+}
+
+.reasons-intro p {
+  margin-bottom: var(--space-xs);
+}
+
+.reasons-intro-strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-top: var(--space-sm);
+}
+
+/* --- 4カード（2×2グリッド） --- */
+.reasons-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.reasons-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  padding: 32px;
+  border-left: 4px solid #1e3a8a;
+}
+
+.reasons-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.reasons-card-num {
+  font-size: 40px;
+  font-weight: 900;
+  color: #1e3a8a;
+  line-height: 1;
+}
+
+.reasons-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reasons-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e3a8a;
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+.reasons-card-sub {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.reasons-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reasons-card-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.reasons-card-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* --- Reasons: Tablet --- */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .reasons-en {
+    font-size: 80px;
+  }
+
+  .reasons-heading {
+    font-size: 36px;
+  }
+
+  .reasons-lead {
+    font-size: 24px;
+  }
+}
+
+/* --- Reasons: SP --- */
+@media (max-width: 767px) {
+  .reasons-section {
+    padding: 48px 0 64px;
+  }
+
+  .reasons-en {
+    font-size: 50px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .reasons-heading {
+    font-size: 28px;
+  }
+
+  .reasons-lead {
+    font-size: 22px;
+  }
+
+  .reasons-intro {
+    font-size: 15px;
+    text-align: left;
+    padding: 0 var(--space-xs);
+  }
+
+  .reasons-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .reasons-card {
+    padding: 24px;
+  }
+
+  .reasons-card-num {
+    font-size: 32px;
+  }
+
+  .reasons-card-title {
+    font-size: 18px;
+  }
+}
+
 /* ============================================================
-   Section 3-b: Solution
+   Section 4-b: Solution
    ============================================================ */
 
 .solution-lead {
