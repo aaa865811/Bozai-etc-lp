@@ -47,7 +47,10 @@
     return '<div class="voice-card voice-card--text"' +
       (t.comment_full ? ' data-modal="' + esc(t.id) + '"' : '') + '>' +
       '<div class="voice-card-ribbon">合格者の声</div>' +
-      '<div class="voice-card-avatar">' + esc(initials(t.name)) + '</div>' +
+      '<div class="voice-card-avatar">' +
+        '<span class="voice-card-avatar-circle">' + esc(initials(t.name)) + '</span>' +
+        '<span class="voice-card-avatar-name">' + esc(t.name) + '</span>' +
+      '</div>' +
       '<div class="voice-card-info">' +
         '<p class="voice-card-name">' + esc(t.name) + ' <small>様</small></p>' +
         badges(t.subjects) +
