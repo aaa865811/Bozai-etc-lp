@@ -1,0 +1,665 @@
+/* ============================================================
+   CSS Reset + Base Styles
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.8;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ============================================================
+   CSS Custom Properties (Design Tokens)
+   - ネットスクールのコーポレートカラーをベースに設定
+   - CTA のみアクセント色を使用
+   ============================================================ */
+
+:root {
+  /* Brand Colors */
+  --color-primary: #1a5c9e;       /* ネットスクール青（メイン） */
+  --color-primary-dark: #0e3d6e;
+  --color-primary-light: #e8f0fa;
+
+  /* CTA Accent */
+  --color-accent: #e8590c;        /* CTAボタン用アクセント（オレンジ） */
+  --color-accent-dark: #c44b0a;
+  --color-accent-light: #fff4ef;
+
+  /* Neutral */
+  --color-text: #2c2c2c;
+  --color-text-light: #5a5a5a;
+  --color-text-muted: #888888;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f8fa;
+  --color-border: #dce0e6;
+
+  /* Typography */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 2rem;      /* 32px */
+  --font-size-3xl: 2.5rem;    /* 40px */
+
+  /* Spacing */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2.5rem;    /* 40px */
+  --space-xl: 4rem;      /* 64px */
+  --space-2xl: 6rem;     /* 96px */
+
+  /* Layout */
+  --max-width: 1100px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* ============================================================
+   Shared Layout
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+section {
+  padding: var(--space-2xl) 0;
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  padding: 0.85em 2em;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: background-color 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-lg {
+  font-size: var(--font-size-lg);
+  padding: 1em 2.5em;
+}
+
+/* ============================================================
+   Section 1: FV
+   ============================================================ */
+
+.fv {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: var(--space-2xl) 0;
+}
+
+.fv-title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.fv-subtitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-lg);
+  opacity: 0.9;
+}
+
+.fv-cta {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fv .btn-secondary {
+  color: #fff;
+  border-color: #fff;
+}
+
+.fv .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================================
+   Section 2: Empathy
+   ============================================================ */
+
+.empathy {
+  background-color: var(--color-bg-alt);
+}
+
+.empathy-list {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.empathy-item {
+  background: #fff;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+  font-size: var(--font-size-lg);
+}
+
+/* ============================================================
+   Section 3: Solution
+   ============================================================ */
+
+.solution-lead {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.solution-point {
+  background: var(--color-primary-light);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.solution-point-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.solution-point-text {
+  color: var(--color-text-light);
+}
+
+/* ============================================================
+   Section 4: Comparison Table
+   ============================================================ */
+
+.comparison {
+  background-color: var(--color-bg-alt);
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.comparison-table thead th {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.comparison-table thead th:first-child {
+  background: var(--color-bg-alt);
+}
+
+.comparison-table tbody th {
+  background: var(--color-bg-alt);
+  font-weight: 600;
+  text-align: left;
+}
+
+.comparison-recommend {
+  background: var(--color-accent) !important;
+}
+
+/* ============================================================
+   Section 5: Curriculum
+   ============================================================ */
+
+.curriculum-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.curriculum-step {
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+
+.curriculum-step-num {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.curriculum-step-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.curriculum-step-text {
+  color: var(--color-text-light);
+}
+
+/* ============================================================
+   Section 6: Instructors
+   ============================================================ */
+
+.instructors {
+  background-color: var(--color-bg-alt);
+}
+
+.instructors-list {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.instructor-card {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  max-width: 320px;
+}
+
+.instructor-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-border);
+  margin: 0 auto var(--space-sm);
+}
+
+.instructor-name {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.instructor-role {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.instructor-text {
+  color: var(--color-text-light);
+}
+
+/* ============================================================
+   Section 7: Materials
+   ============================================================ */
+
+.materials-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.materials-item {
+  background: var(--color-bg-alt);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.materials-item-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary-dark);
+}
+
+.materials-item-text {
+  color: var(--color-text-light);
+}
+
+/* ============================================================
+   Section 8: Support
+   ============================================================ */
+
+.support {
+  background-color: var(--color-bg-alt);
+}
+
+.support-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.support-item {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.support-item-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary-dark);
+}
+
+.support-item-text {
+  color: var(--color-text-light);
+}
+
+/* ============================================================
+   Section 9: Voices
+   ============================================================ */
+
+.voices-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.voice-card {
+  background: var(--color-bg-alt);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.voice-text {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-sm);
+  line-height: 1.9;
+}
+
+.voice-author {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Section 10: Pricing
+   ============================================================ */
+
+.pricing {
+  background-color: var(--color-bg-alt);
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.pricing-card {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.pricing-card-highlight {
+  border: 2px solid var(--color-accent);
+  position: relative;
+}
+
+.pricing-card-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary-dark);
+}
+
+.pricing-card-price {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-card-tax {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+}
+
+.pricing-card-features {
+  text-align: left;
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pricing-card-features li::before {
+  content: "\2713 ";
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Section 11: FAQ
+   ============================================================ */
+
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+
+.faq-answer {
+  padding: 0 var(--space-md) var(--space-sm);
+  color: var(--color-text-light);
+}
+
+/* ============================================================
+   Section 12: CTA
+   ============================================================ */
+
+.cta {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.cta-text {
+  font-size: var(--font-size-lg);
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta .btn-secondary {
+  color: #fff;
+  border-color: #fff;
+}
+
+.cta .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  :root {
+    --font-size-3xl: 2rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-xl: 1.25rem;
+  }
+
+  section {
+    padding: var(--space-xl) 0;
+  }
+
+  .solution-points {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-content {
+    grid-template-columns: 1fr;
+  }
+
+  .support-items {
+    grid-template-columns: 1fr;
+  }
+
+  .voices-list {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  :root {
+    --font-size-3xl: 1.625rem;
+    --font-size-2xl: 1.25rem;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .btn-lg {
+    font-size: var(--font-size-base);
+    padding: 0.85em 1.5em;
+    width: 100%;
+  }
+
+  .fv-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
