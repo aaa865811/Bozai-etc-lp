@@ -119,7 +119,7 @@
               </svg>
             </div>
             <!-- 修正：3枚目カードの改行位置を調整 -->
-            <p class="concerns-card-text">「同期は結婚、昇進、独立──<br>何かを掴んでいく。<br>自分も、<span class="concerns-marker">自分の人生で</span><br><span class="concerns-marker">勝負したい。</span>」</p>
+            <p class="concerns-card-text">「同期は結婚、昇進、独立<br>何かを掴んでいく。<br>自分も、<span class="concerns-marker">自分の人生で</span><br><span class="concerns-marker">勝負したい。</span>」</p>
           </div>
         </div>
 
@@ -144,9 +144,11 @@
       <!-- 見出し＋ビジュアル -->
       <div class="answer-header">
         <div class="answer-header-text">
+          <!-- 修正：SP時に確実に3行表示するため構造化 -->
           <h2 class="answer-heading">
-            その<span class="answer-marker">3つのお悩み</span>に、<br>
-            ネットスクールは<span class="answer-marker">こう答えます</span>。
+            <span class="heading-line">その<span class="answer-marker">3つのお悩み</span>に、</span>
+            <span class="heading-line">ネットスクールは</span>
+            <span class="heading-line"><span class="answer-marker">こう答えます</span>。</span>
           </h2>
           <p class="answer-sub">
             その答えは、<span class="answer-marker">ZOOM学習コンサル</span>。<br>
@@ -235,8 +237,9 @@
 
     <div class="reasons-inner">
       <!-- 見出し -->
+      <!-- 修正：SP時に確実に1行表示 -->
       <h2 class="reasons-heading">
-        ネットスクールが、<span class="reasons-heading-accent">選ばれる理由</span>
+        <span class="heading-line">ネットスクールが、<span class="reasons-heading-accent">選ばれる理由</span></span>
       </h2>
 
       <!-- リード文（手書き風） -->

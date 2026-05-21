@@ -713,6 +713,17 @@ section {
   text-align: center;
 }
 
+/* PC時はheading-lineをインライン表示（従来通りの改行位置を維持） */
+.answer-heading .heading-line {
+  display: inline;
+}
+
+/* 1行目の後で改行（PC時の2行表示） */
+.answer-heading .heading-line:first-child::after {
+  content: "\A";
+  white-space: pre;
+}
+
 /* 黄色マーカー（見出し用） */
 .answer-marker {
   color: #1e3a8a;
@@ -907,9 +918,15 @@ section {
     gap: var(--space-sm);
   }
 
+  /* 修正：SP時に確実に3行表示 */
   .answer-heading {
-    font-size: 28px;
+    font-size: 22px;
     text-align: left;
+  }
+
+  .answer-heading .heading-line {
+    display: block;
+    white-space: nowrap;
   }
 
   .answer-sub {
@@ -1142,8 +1159,14 @@ section {
     left: 16px;
   }
 
+  /* 修正：SP時に確実に1行表示 */
   .reasons-heading {
-    font-size: 28px;
+    font-size: 22px;
+  }
+
+  .reasons-heading .heading-line {
+    display: block;
+    white-space: nowrap;
   }
 
   .reasons-lead {
