@@ -53,14 +53,18 @@
        ============================================================ -->
   <section id="fv" class="fv">
     <div class="fv-visual">
-      <img
-        src="assets/fv-pc.png"
-        alt="ネットスクール税理士講座 - 働きながらでも続けられる"
-        width="1672"
-        height="941"
-        loading="eager"
-        class="fv-image"
-      >
+      <!-- SP/PC画像切り替え：767px以下でSP版を表示 -->
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/fv-sp.png" width="941" height="1672">
+        <img
+          src="assets/fv-pc.png"
+          alt="ネットスクール税理士講座 - 働きながらでも続けられる"
+          width="1672"
+          height="941"
+          loading="eager"
+          class="fv-image"
+        >
+      </picture>
     </div>
   </section>
 
