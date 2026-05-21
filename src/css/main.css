@@ -2833,8 +2833,8 @@ section {
 
 .final-cta-section {
   position: relative;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2b5ba8 100%);
-  color: #fff;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f7ff 100%);
+  color: #1a1a1a;
   padding: 80px 0;
   overflow: hidden;
 }
@@ -2845,8 +2845,8 @@ section {
   left: 40px;
   font-size: 160px;
   font-weight: 900;
-  color: #ffd700;
-  opacity: 0.15;
+  color: #dce7f3;
+  opacity: 0.5;
   letter-spacing: -4px;
   text-transform: uppercase;
   line-height: 1;
@@ -2868,8 +2868,8 @@ section {
   content: "★ ✦ ★ ✧ ★ ✦ ★ ✧ ★ ✦ ★ ✧ ★";
   position: absolute;
   font-size: 14px;
-  color: #ffd700;
-  opacity: 0.2;
+  color: #1e3a8a;
+  opacity: 0.08;
   white-space: nowrap;
   letter-spacing: 60px;
 }
@@ -2915,7 +2915,7 @@ section {
   display: block;
   width: 200px;
   height: 6px;
-  background: #ffd400;
+  background: var(--color-accent);
   margin: 12px auto 0;
   border-radius: 3px;
 }
@@ -2924,7 +2924,7 @@ section {
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
-  opacity: 0.85;
+  color: #555;
   margin-bottom: var(--space-xl);
 }
 
@@ -3112,14 +3112,14 @@ section {
   border-radius: 6px;
   font-size: 15px;
   font-weight: 600;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.4);
+  background: #fff;
+  color: #1e3a8a;
+  border: 2px solid #1e3a8a;
   transition: background 0.2s;
 }
 
 .fcta-sub-btn:hover {
-  background: rgba(255,255,255,0.2);
+  background: #e8f0fa;
 }
 
 /* --- 安心要素 --- */
@@ -3142,17 +3142,18 @@ section {
 .fcta-trust-name {
   font-size: 15px;
   font-weight: 700;
+  color: #1e3a8a;
 }
 
 .fcta-trust-desc {
   font-size: 12px;
-  opacity: 0.7;
+  color: #888;
 }
 
 /* --- お問い合わせ --- */
 .fcta-divider {
   border: none;
-  border-top: 1px solid rgba(255,215,0,0.3);
+  border-top: 1px solid var(--color-border);
   margin-bottom: var(--space-lg);
 }
 
@@ -3174,20 +3175,21 @@ section {
 
 .fcta-contact-label {
   font-size: 13px;
-  opacity: 0.7;
+  color: #888;
   margin-bottom: 4px;
 }
 
 .fcta-contact-tel {
   font-size: 32px;
   font-weight: 800;
+  color: #1e3a8a;
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
 
 .fcta-contact-note {
   font-size: 12px;
-  opacity: 0.6;
+  color: #aaa;
 }
 
 .fcta-contact-mail-btn {
