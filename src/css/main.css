@@ -444,13 +444,19 @@ section {
   user-select: none;
 }
 
+/* 修正：見出しを強制2行表示に */
 .concerns-heading {
   position: relative;
   z-index: 1;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.4;
+}
+
+.concerns-heading .heading-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .concerns-heading-accent {
@@ -607,8 +613,9 @@ section {
     transform: translate(-50%, 0);
   }
 
+  /* 修正：SP時の見出しフォントサイズ調整 */
   .concerns-heading {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .concerns-heading::after {

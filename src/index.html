@@ -75,7 +75,11 @@
         <!-- 左：見出しエリア -->
         <div class="concerns-heading-area">
           <span class="concerns-en" aria-hidden="true">ANXIETY</span>
-          <h2 class="concerns-heading">こんな<span class="concerns-heading-accent">お悩み</span>、<br>ありませんか？</h2>
+          <!-- 修正：見出しを強制2行表示に構造化 -->
+          <h2 class="concerns-heading">
+            <span class="heading-line">こんな<span class="concerns-heading-accent">お悩み</span>、</span>
+            <span class="heading-line">ありませんか？</span>
+          </h2>
         </div>
 
         <!-- 中央：3カード -->
@@ -110,6 +114,7 @@
                 <ellipse cx="16" cy="16" rx="10" ry="6" transform="rotate(60 16 16)"/>
               </svg>
             </div>
+            <!-- 修正：3枚目カードの改行位置を調整 -->
             <p class="concerns-card-text">「同期は結婚、昇進、独立──<br>何かを掴んでいく。<br>自分も、<span class="concerns-marker">自分の人生で</span><br><span class="concerns-marker">勝負したい。</span>」</p>
           </div>
         </div>
@@ -393,9 +398,9 @@
       </h2>
       <p class="courses-sub">あなたの目標と状況に合わせて、3つの講座からお選びいただけます。<br>迷ったら、お得で効率の良い「<span class="courses-marker-sm">簿財一体型</span>」がおすすめです。</p>
 
-      <!-- 3カード -->
+      <!-- 修正：おすすめの簿財一体型コースを中央に配置（左：簿記論／中央：簿財一体型／右：財務諸表論） -->
       <div class="courses-cards">
-        <!-- カード1：簿記論 -->
+        <!-- カード1：簿記論（左） -->
         <div class="courses-card">
           <div class="courses-card-icon">
             <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect x="4" y="6" width="24" height="20" rx="2" stroke="#fff" stroke-width="2"/><line x1="10" y1="12" x2="22" y2="12" stroke="#fff" stroke-width="2"/><line x1="10" y1="17" x2="18" y2="17" stroke="#fff" stroke-width="1.5"/><line x1="10" y1="21" x2="20" y2="21" stroke="#fff" stroke-width="1.5"/></svg>
@@ -420,32 +425,7 @@
           <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_bokiron_h/" target="_blank" rel="noopener noreferrer" class="courses-card-btn courses-card-btn--outline" data-course="bokiron" data-cta-type="course-detail" aria-label="簿記論コースの詳細を新しいタブで開く">詳細を見る →</a>
         </div>
 
-        <!-- カード2：財務諸表論 -->
-        <div class="courses-card">
-          <div class="courses-card-icon">
-            <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M8 4h12l6 6v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="#fff" stroke-width="2"/><path d="M20 4v6h6" stroke="#fff" stroke-width="2"/><line x1="11" y1="16" x2="21" y2="16" stroke="#fff" stroke-width="1.5"/><line x1="11" y1="20" x2="19" y2="20" stroke="#fff" stroke-width="1.5"/></svg>
-          </div>
-          <h3 class="courses-card-name">税理士財務諸表論<br><small>標準コース</small></h3>
-          <p class="courses-card-price">145,600<span>円</span></p>
-          <p class="courses-card-tax">（税込・教材込）</p>
-          <p class="courses-card-alt">教材別：130,400円</p>
-          <hr class="courses-card-hr">
-          <div class="courses-card-instructor">
-            <span class="courses-card-instructor-label">担当講師</span>
-            <p>中村 雄行 / 穂坂 治宏</p>
-          </div>
-          <p class="courses-card-desc">財務諸表論に集中して合格を狙う方向け</p>
-          <ul class="courses-card-list">
-            <li>学習期間：約9〜12ヶ月</li>
-            <li>計算問題を体系的に学習</li>
-            <li>ZOOM学習コンサル付き</li>
-            <li>オンデマンド24時間視聴</li>
-            <li>学び舎（受講生コミュニティ）</li>
-          </ul>
-          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_zaih_h/" target="_blank" rel="noopener noreferrer" class="courses-card-btn courses-card-btn--outline" data-course="zaihyo" data-cta-type="course-detail" aria-label="財務諸表論コースの詳細を新しいタブで開く">詳細を見る →</a>
-        </div>
-
-        <!-- カード3：簿財一体型（おすすめ） -->
+        <!-- カード2：簿財一体型（中央・おすすめ） -->
         <div class="courses-card courses-card--recommend">
           <div class="courses-card-ribbon">最もおすすめ</div>
           <div class="courses-card-icon courses-card-icon--accent">
@@ -475,6 +455,31 @@
             <li>合格まで安心制度（再受講割引）</li>
           </ul>
           <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_bozai_h/" target="_blank" rel="noopener noreferrer" class="courses-card-btn courses-card-btn--primary" data-course="bozai" data-cta-type="course-apply" aria-label="簿財一体型コースの申し込みページを新しいタブで開く">このコースを申し込む →</a>
+        </div>
+
+        <!-- カード3：財務諸表論（右） -->
+        <div class="courses-card">
+          <div class="courses-card-icon">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M8 4h12l6 6v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="#fff" stroke-width="2"/><path d="M20 4v6h6" stroke="#fff" stroke-width="2"/><line x1="11" y1="16" x2="21" y2="16" stroke="#fff" stroke-width="1.5"/><line x1="11" y1="20" x2="19" y2="20" stroke="#fff" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="courses-card-name">税理士財務諸表論<br><small>標準コース</small></h3>
+          <p class="courses-card-price">145,600<span>円</span></p>
+          <p class="courses-card-tax">（税込・教材込）</p>
+          <p class="courses-card-alt">教材別：130,400円</p>
+          <hr class="courses-card-hr">
+          <div class="courses-card-instructor">
+            <span class="courses-card-instructor-label">担当講師</span>
+            <p>中村 雄行 / 穂坂 治宏</p>
+          </div>
+          <p class="courses-card-desc">財務諸表論に集中して合格を狙う方向け</p>
+          <ul class="courses-card-list">
+            <li>学習期間：約9〜12ヶ月</li>
+            <li>計算問題を体系的に学習</li>
+            <li>ZOOM学習コンサル付き</li>
+            <li>オンデマンド24時間視聴</li>
+            <li>学び舎（受講生コミュニティ）</li>
+          </ul>
+          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_zaih_h/" target="_blank" rel="noopener noreferrer" class="courses-card-btn courses-card-btn--outline" data-course="zaihyo" data-cta-type="course-detail" aria-label="財務諸表論コースの詳細を新しいタブで開く">詳細を見る →</a>
         </div>
       </div>
 
@@ -734,7 +739,7 @@
       <h2 class="fcta-heading"><span class="fcta-heading-sm">今日が、</span><br>新しいスタートライン。</h2>
       <p class="fcta-sub">迷っている時間も、勉強できる時間。<br>ZOOM学習コンサルの講師が、あなたを待っています。</p>
 
-      <!-- 3コースカード -->
+      <!-- 修正：おすすめの簿財一体型コースを中央に配置（左：簿記論／中央：簿財一体型／右：財務諸表論） -->
       <div class="fcta-cards">
         <div class="fcta-card">
           <div class="fcta-card-icon"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><rect x="4" y="6" width="24" height="20" rx="2" stroke="#fff" stroke-width="2"/><line x1="10" y1="12" x2="22" y2="12" stroke="#fff" stroke-width="2"/><line x1="10" y1="17" x2="18" y2="17" stroke="#fff" stroke-width="1.5"/></svg></div>
@@ -748,20 +753,6 @@
             <li>学び舎コミュニティ</li>
           </ul>
           <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_bokiron_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--outline" data-course="bokiron">詳細・お申込みへ →</a>
-        </div>
-
-        <div class="fcta-card">
-          <div class="fcta-card-icon"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M8 4h12l6 6v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="#fff" stroke-width="2"/><path d="M20 4v6h6" stroke="#fff" stroke-width="2"/></svg></div>
-          <h3 class="fcta-card-name">税理士財務諸表論コース</h3>
-          <hr class="fcta-card-hr">
-          <p class="fcta-card-price">145,600<span>円〜</span></p>
-          <p class="fcta-card-tax">（税込・教材込）</p>
-          <ul class="fcta-card-list">
-            <li>ZOOM学習コンサル付き</li>
-            <li>24時間オンデマンド</li>
-            <li>学び舎コミュニティ</li>
-          </ul>
-          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_zaih_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--outline" data-course="zaihyo">詳細・お申込みへ →</a>
         </div>
 
         <div class="fcta-card fcta-card--recommend">
@@ -779,6 +770,20 @@
             <li>合格まで安心制度</li>
           </ul>
           <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_bozai_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--primary fcta-pulse" data-course="bozai">今すぐお申し込み →</a>
+        </div>
+
+        <div class="fcta-card">
+          <div class="fcta-card-icon"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M8 4h12l6 6v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="#fff" stroke-width="2"/><path d="M20 4v6h6" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3 class="fcta-card-name">税理士財務諸表論コース</h3>
+          <hr class="fcta-card-hr">
+          <p class="fcta-card-price">145,600<span>円〜</span></p>
+          <p class="fcta-card-tax">（税込・教材込）</p>
+          <ul class="fcta-card-list">
+            <li>ZOOM学習コンサル付き</li>
+            <li>24時間オンデマンド</li>
+            <li>学び舎コミュニティ</li>
+          </ul>
+          <a href="https://www.net-school.co.jp/web_school_course/zeirishi/2027_zaih_h/" target="_blank" rel="noopener noreferrer" class="fcta-card-btn fcta-card-btn--outline" data-course="zaihyo">詳細・お申込みへ →</a>
         </div>
       </div>
 
