@@ -2149,6 +2149,368 @@ section {
   .courses-benefits-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
 }
 
+/* === Section: Instructors === */
+
+.instructors-section {
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f7ff 100%);
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.inst-en {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 110px;
+  font-weight: 900;
+  color: #dce7f3;
+  opacity: 0.5;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.inst-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.inst-heading {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.inst-marker {
+  color: #1e3a8a;
+  background: linear-gradient(transparent 60%, #ffd400 60%);
+}
+
+.inst-sub {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+/* --- 3カード --- */
+.inst-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: var(--space-lg);
+}
+
+.inst-card {
+  background: #fff;
+  border: 2px solid #d9e5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.inst-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.inst-card-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.inst-card-badge {
+  display: inline-block;
+  background: #1e3a8a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 20px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.inst-card-badge--gold {
+  background: linear-gradient(135deg, #d4af37, #f5d67a);
+  color: #fff;
+}
+
+.inst-card-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.inst-card-career {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.inst-card-years {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.inst-card-hr {
+  border: none;
+  border-top: 1px dashed #ddd;
+  margin: 0 0 16px;
+}
+
+.inst-card-quote {
+  position: relative;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.inst-card-quote-mark {
+  position: absolute;
+  top: -8px;
+  left: -4px;
+  font-size: 48px;
+  font-family: Georgia, serif;
+  color: #dce7f3;
+  line-height: 1;
+}
+
+.inst-card-quote-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.inst-card-history {
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inst-card-history li {
+  font-size: 13px;
+  color: #555;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.inst-card-history li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #1e3a8a;
+  font-size: 8px;
+  top: 0.4em;
+}
+
+.inst-card-btn {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  background: #fff;
+  color: #1e3a8a;
+  border: 2px solid #1e3a8a;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.inst-card-btn:hover {
+  background: #e8f0fa;
+  transform: translateY(-2px);
+}
+
+/* --- 共通訴求エリア --- */
+.inst-features {
+  background: #f0f7ff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: var(--space-md);
+}
+
+.inst-features-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.inst-features-body {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.inst-features-list {
+  flex: 1;
+  display: flex;
+  gap: var(--space-md);
+}
+
+.inst-feature {
+  text-align: center;
+  flex: 1;
+}
+
+.inst-feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-xs);
+}
+
+.inst-feature-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 2px;
+}
+
+.inst-feature-desc {
+  font-size: 11px;
+  color: #888;
+}
+
+/* 合計指導歴バッジ */
+.inst-total-badge {
+  flex-shrink: 0;
+  text-align: center;
+  position: relative;
+  width: 160px;
+}
+
+.inst-total-wreath {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  pointer-events: none;
+}
+
+.inst-total-label {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.inst-total-years {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+
+.inst-total-years span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.inst-total-ribbon {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #1a1a1a;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 注意書き */
+.inst-note {
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}
+
+/* --- Instructors: Tablet --- */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .inst-en { font-size: 80px; }
+  .inst-heading { font-size: 32px; }
+  .inst-card-photo { width: 140px; height: 140px; }
+  .inst-card-name { font-size: 24px; }
+}
+
+/* --- Instructors: SP --- */
+@media (max-width: 767px) {
+  .instructors-section { padding: 48px 0 64px; }
+  .inst-en { font-size: 50px; top: 16px; left: 16px; }
+  .inst-heading { font-size: 24px; }
+  .inst-sub { font-size: 15px; }
+
+  .inst-cards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .inst-card-photo { width: 120px; height: 120px; }
+  .inst-card-name { font-size: 24px; }
+
+  .inst-features { padding: 24px 16px; }
+  .inst-features-title { font-size: 20px; }
+
+  .inst-features-body {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .inst-features-list {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .inst-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-align: left;
+  }
+
+  .inst-feature-icon {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .inst-total-badge {
+    width: auto;
+  }
+}
+
 /* === Section 7: Curriculum === */
 
 .curriculum-section {
