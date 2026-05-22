@@ -3996,15 +3996,21 @@ section {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.modal.is-visible {
+  display: flex;
 }
 
 .modal.is-open {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-overlay {
