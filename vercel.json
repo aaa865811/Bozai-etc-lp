@@ -1,3 +1,7 @@
 {
-  "outputDirectory": "src"
+  "outputDirectory": "src",
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/dashboard", "destination": "/admin/dashboard.html" }
+  ]
 }

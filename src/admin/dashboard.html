@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>資料請求管理 - ダッシュボード</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+    }
+    .header {
+      background: #1E3A8A;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header h1 { font-size: 18px; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .count-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    .btn-logout, .btn-csv {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-csv { background: #FF7A00; color: #fff; }
+    .btn-csv:hover { background: #e66a00; }
+    .btn-logout { background: rgba(255,255,255,0.15); color: #fff; }
+    .btn-logout:hover { background: rgba(255,255,255,0.3); }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+    .search-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    .search-bar input {
+      flex: 1;
+      max-width: 400px;
+      padding: 10px 16px;
+      font-size: 14px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+    }
+    .search-bar input:focus { outline: none; border-color: #1E3A8A; }
+
+    .table-wrap {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    thead { background: #f0f3f8; }
+    th {
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 700;
+      color: #1E3A8A;
+      white-space: nowrap;
+      border-bottom: 2px solid #dce0e6;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    tr:hover td { background: #f9fafe; }
+    .reasons-cell {
+      max-width: 280px;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+      font-size: 16px;
+    }
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+    }
+    .error-msg {
+      background: #ffe5e5;
+      color: #c00;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>資料請求管理ダッシュボード</h1>
+    <div class="header-right">
+      <span class="count-badge" id="count-badge">-- 件</span>
+      <button class="btn-csv" id="btn-csv">CSV出力</button>
+      <button class="btn-logout" id="btn-logout">ログアウト</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="名前・メールで検索...">
+    </div>
+    <div id="error-area"></div>
+    <div class="table-wrap">
+      <div class="loading" id="loading">データを読み込み中...</div>
+      <table id="data-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>申込日時</th>
+            <th>お名前</th>
+            <th>メール</th>
+            <th>生年月日</th>
+            <th>年齢</th>
+            <th>検討きっかけ</th>
+            <th>IP</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <div class="empty-state" id="empty-state" style="display:none;">データがありません</div>
+    </div>
+  </div>
+
+  <script>
+    let allData = [];
+
+    // 認証チェック & データ取得
+    async function loadData() {
+      try {
+        const res = await fetch('/api/admin/requests');
+        if (res.status === 401) {
+          window.location.href = '/admin';
+          return;
+        }
+        const result = await res.json();
+        if (!result.success) throw new Error(result.error);
+
+        allData = result.data;
+        document.getElementById('count-badge').textContent = allData.length + ' 件';
+        document.getElementById('loading').style.display = 'none';
+        renderTable(allData);
+      } catch (err) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error-area').innerHTML =
+          '<div class="error-msg">データの取得に失敗しました: ' + err.message + '</div>';
+      }
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById('table-body');
+      const table = document.getElementById('data-table');
+      const empty = document.getElementById('empty-state');
+
+      if (data.length === 0) {
+        table.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      table.style.display = '';
+      empty.style.display = 'none';
+
+      tbody.innerHTML = data.map(row => {
+        const dt = row.created_at ? new Date(row.created_at).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }) : '-';
+        const birth = (row.birth_year && row.birth_month && row.birth_day)
+          ? row.birth_year + '/' + row.birth_month + '/' + row.birth_day
+          : '-';
+        const reasons = Array.isArray(row.reasons) && row.reasons.length > 0
+          ? row.reasons.join('; ')
+          : '-';
+        const esc = s => s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '-';
+
+        return '<tr>'
+          + '<td>' + row.id + '</td>'
+          + '<td style="white-space:nowrap;">' + dt + '</td>'
+          + '<td>' + esc(row.name) + '</td>'
+          + '<td>' + esc(row.email) + '</td>'
+          + '<td>' + birth + '</td>'
+          + '<td>' + (row.age != null ? row.age : '-') + '</td>'
+          + '<td class="reasons-cell">' + esc(reasons) + '</td>'
+          + '<td style="font-size:11px;">' + esc(row.ip_address) + '</td>'
+          + '</tr>';
+      }).join('');
+    }
+
+    // 検索
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      if (!q) { renderTable(allData); return; }
+      const filtered = allData.filter(r =>
+        (r.name && r.name.toLowerCase().includes(q)) ||
+        (r.email && r.email.toLowerCase().includes(q))
+      );
+      renderTable(filtered);
+    });
+
+    // CSV出力
+    document.getElementById('btn-csv').addEventListener('click', () => {
+      if (allData.length === 0) return;
+      const headers = ['ID','申込日時','お名前','メール','生年月日','年齢','検討きっかけ'];
+      const rows = allData.map(r => {
+        const dt = r.created_at ? new Date(r.created_at).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }) : '';
+        const birth = (r.birth_year && r.birth_month && r.birth_day)
+          ? r.birth_year + '/' + r.birth_month + '/' + r.birth_day : '';
+        const reasons = Array.isArray(r.reasons) && r.reasons.length > 0
+          ? r.reasons.join('; ') : '';
+        return [r.id, dt, r.name, r.email, birth, r.age != null ? r.age : '', reasons]
+          .map(v => '"' + String(v).replace(/"/g, '""') + '"').join(',');
+      });
+      const bom = '\uFEFF';
+      const csv = bom + headers.join(',') + '\n' + rows.join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'document_requests_' + new Date().toISOString().slice(0,10) + '.csv';
+      a.click();
+    });
+
+    // ログアウト
+    document.getElementById('btn-logout').addEventListener('click', async () => {
+      await fetch('/api/admin/logout', { method: 'POST' });
+      window.location.href = '/admin';
+    });
+
+    loadData();
+  </script>
+</body>
+</html>
