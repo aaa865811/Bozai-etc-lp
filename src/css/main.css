@@ -2309,24 +2309,6 @@ section {
   top: 0.4em;
 }
 
-.inst-card-btn {
-  display: block;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  background: #fff;
-  color: #1e3a8a;
-  border: 2px solid #1e3a8a;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.inst-card-btn:hover {
-  background: #e8f0fa;
-  transform: translateY(-2px);
-}
-
 /* --- 共通訴求エリア --- */
 .inst-features {
   background: #f0f7ff;
