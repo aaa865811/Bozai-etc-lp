@@ -1886,6 +1886,11 @@ section {
   flex: 1;
 }
 
+.courses-card--compact .courses-card-btn {
+  font-size: 14px;
+  padding: 10px 16px;
+}
+
 .courses-card-top {
   display: flex;
   align-items: center;
