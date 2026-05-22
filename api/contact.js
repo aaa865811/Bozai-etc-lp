@@ -8,10 +8,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, age_group, reasons, consent } = req.body;
+    const { name, email, birth_year, birth_month, birth_day, reasons, consent } = req.body;
 
     // バリデーション
-    if (!name || !email || !age_group || !consent) {
+    if (!name || !email || !birth_year || !birth_month || !birth_day || !consent) {
       return res.status(400).json({
         success: false,
         error: '必須項目が不足しています'
@@ -25,6 +25,15 @@ export default async function handler(req, res) {
         success: false,
         error: 'メールアドレスの形式が正しくありません'
       });
+    }
+
+    // 生年月日・年齢計算
+    const birthDate = `${birth_year}年${birth_month}月${birth_day}日`;
+    const today = new Date();
+    let age = today.getFullYear() - birth_year;
+    const monthDiff = today.getMonth() + 1 - birth_month;
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth_day)) {
+      age--;
     }
 
     const reasonsText = Array.isArray(reasons) && reasons.length > 0
@@ -42,13 +51,13 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: process.env.ADMIN_EMAIL,
-      subject: `【資料請求】${name} 様（${age_group}）`,
+      subject: `【資料請求】${name} 様（${age}歳）`,
       html: `
         <h2>新しい資料請求がありました</h2>
         <table style="border-collapse: collapse; width: 100%;">
           <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>お名前</strong></td><td style="padding: 8px; border-bottom: 1px solid #ccc;">${esc(name)}</td></tr>
           <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>メール</strong></td><td style="padding: 8px; border-bottom: 1px solid #ccc;">${esc(email)}</td></tr>
-          <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>年代</strong></td><td style="padding: 8px; border-bottom: 1px solid #ccc;">${esc(age_group)}</td></tr>
+          <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>生年月日</strong></td><td style="padding: 8px; border-bottom: 1px solid #ccc;">${esc(birthDate)}（${age}歳）</td></tr>
           <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>検討きっかけ</strong></td><td style="padding: 8px; border-bottom: 1px solid #ccc;"><pre style="margin:0;font-family:inherit;">${esc(reasonsText)}</pre></td></tr>
           <tr><td style="padding: 8px;"><strong>受付日時</strong></td><td style="padding: 8px;">${timestamp}</td></tr>
         </table>
