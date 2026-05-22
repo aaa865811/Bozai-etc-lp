@@ -2237,22 +2237,6 @@ section {
   display: block;
 }
 
-.inst-card-badge {
-  display: inline-block;
-  background: #1e3a8a;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 6px 20px;
-  border-radius: 6px;
-  margin-bottom: 12px;
-}
-
-.inst-card-badge--gold {
-  background: linear-gradient(135deg, #d4af37, #f5d67a);
-  color: #fff;
-}
-
 .inst-card-name {
   font-size: 28px;
   font-weight: 700;
