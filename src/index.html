@@ -38,7 +38,7 @@
           <li><a href="#faq" class="header-nav-link">FAQ</a></li>
         </ul>
         <div class="header-nav-cta">
-          <a href="#final-cta" class="btn btn-secondary btn-sm">資料請求</a>
+          <button type="button" class="btn btn-secondary btn-sm document-request-trigger">資料請求</button>
           <a href="#final-cta" class="btn btn-primary btn-sm">申し込む</a>
         </div>
       </nav>
@@ -74,6 +74,9 @@
           class="fv-image"
         >
       </picture>
+    </div>
+    <div class="fv-sub-cta">
+      <button type="button" class="document-request-trigger doc-req-btn">📄 資料請求（無料）</button>
     </div>
   </section>
 
@@ -233,6 +236,7 @@
         </p>
         <span class="answer-cta-arrow" aria-hidden="true">↓</span>
         <a href="#final-cta" class="answer-cta-btn">詳しい学習コンサルを見る →</a>
+        <button type="button" class="document-request-trigger doc-req-btn" style="margin-top:16px;">📄 資料請求（無料）</button>
       </div>
     </div>
   </section>
@@ -578,6 +582,10 @@
             <p class="courses-benefit-desc">再受講割引で再挑戦をサポート</p>
           </div>
         </div>
+      </div>
+
+      <div style="text-align:center;margin-bottom:var(--space-lg);">
+        <button type="button" class="document-request-trigger doc-req-btn">📄 資料請求（無料）</button>
       </div>
 
       <!-- コース選びガイド -->
@@ -936,6 +944,7 @@
         <p class="faq-cta-caption">＼ まだ不安がある方は、こちらもご覧ください ／</p>
         <a href="https://www.net-school.co.jp/web_school_course/zeirishi/" target="_blank" rel="noopener noreferrer" class="faq-cta-btn">その他のご質問はこちら →</a>
         <p class="faq-cta-sub">公式FAQページへ</p>
+        <button type="button" class="document-request-trigger doc-req-btn" style="margin-top:16px;">📄 資料請求（無料）</button>
       </div>
     </div>
   </section>
@@ -1003,7 +1012,7 @@
 
       <!-- サブアクション -->
       <div class="fcta-sub-actions">
-        <a href="#" class="fcta-sub-btn">📄 資料請求（無料）</a>
+        <button type="button" class="fcta-sub-btn document-request-trigger">📄 資料請求（無料）</button>
       </div>
 
       <!-- 安心要素 -->
@@ -1044,8 +1053,74 @@
     </div>
   </section>
 
+  <!-- 資料請求モーダル -->
+  <div id="document-request-modal" class="modal" style="display:none;">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>資料請求（無料）</h2>
+        <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-description">
+          必要事項をご入力ください。<br>
+          税理士講座のデジタルパンフレットURLをメールでお送りします。
+        </p>
+        <form id="document-request-form">
+          <div class="form-group">
+            <label for="dr-name">お名前 <span class="required">*</span></label>
+            <input type="text" id="dr-name" name="name" required placeholder="例：山田 太郎">
+          </div>
+          <div class="form-group">
+            <label for="dr-email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="dr-email" name="email" required placeholder="例：example@mail.com">
+          </div>
+          <div class="form-group">
+            <label for="dr-age">年代 <span class="required">*</span></label>
+            <select id="dr-age" name="age_group" required>
+              <option value="">選択してください</option>
+              <option value="20代">20代</option>
+              <option value="30代">30代</option>
+              <option value="40代">40代</option>
+              <option value="50代以上">50代以上</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>ネットスクールのWEB講座をご検討頂くきっかけ（複数選択可）</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="以前もネットスクールの講座を利用していたから"><span>以前もネットスクールの講座を利用していたから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="教材が分かりやすそうだから"><span>教材が分かりやすそうだから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="講師に魅力を感じたから"><span>講師に魅力を感じたから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="オンラインで学習できるから"><span>オンラインで学習できるから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="交通費や時間の節約ができそうだから"><span>交通費や時間の節約ができそうだから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="受講料が比較的安そうだから"><span>受講料が比較的安そうだから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="仕事や家事との両立が図りやすそうだから"><span>仕事や家事との両立が図りやすそうだから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="繰り返し受講できて便利そうだから"><span>繰り返し受講できて便利そうだから</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="reasons" value="とりあえず他校との比較として"><span>とりあえず他校との比較として</span></label>
+            </div>
+          </div>
+          <div class="form-group form-consent">
+            <label class="checkbox-item">
+              <input type="checkbox" id="dr-consent" name="consent" required>
+              <span>個人情報の取扱いに同意する <span class="required">*</span></span>
+            </label>
+          </div>
+          <button type="submit" class="form-submit">送信する</button>
+        </form>
+        <div id="form-success" class="form-message" style="display:none;">
+          <h3>✓ ご請求ありがとうございました</h3>
+          <p>ご入力いただいたメールアドレス宛に、デジタルパンフレットのURLをお送りしました。</p>
+        </div>
+        <div id="form-error" class="form-message form-message--error" style="display:none;">
+          <p>送信に失敗しました。お電話（0120-979-919）でもお問い合わせいただけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
   <script src="js/voice.js"></script>
   <script src="js/faq.js"></script>
+  <script src="js/document-request.js"></script>
 </body>
 </html>
