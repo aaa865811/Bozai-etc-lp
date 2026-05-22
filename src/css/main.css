@@ -2047,8 +2047,28 @@ section {
 }
 
 /* --- 価格訴求エリア（簿財一体型） --- */
+/* --- 横2分割エリア --- */
+.courses-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 24px 0;
+  align-items: center;
+}
+
+.courses-content-grid .courses-card-list {
+  margin-bottom: 0;
+}
+
 .courses-pricing {
-  margin-bottom: var(--space-sm);
+  text-align: center;
+  padding: 16px;
+  background: rgba(255, 122, 0, 0.05);
+  border-radius: 12px;
+}
+
+.courses-card--perfect .courses-pricing {
+  background: rgba(30, 58, 138, 0.05);
 }
 
 .courses-pricing-label {
@@ -2367,6 +2387,7 @@ section {
   .courses-grid { grid-template-columns: 1fr 1fr; }
   .courses-left { grid-column: 1 / -1; flex-direction: row; }
   .courses-card-price--xl { font-size: 36px; }
+  .courses-content-grid { gap: 16px; }
   .courses-benefits-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
   .courses-guide-grid { flex-wrap: wrap; }
 }
@@ -2396,6 +2417,11 @@ section {
   .courses-card-price--xl { font-size: 36px; }
   .courses-strikethrough { font-size: 22px; }
   .courses-discount-badge { font-size: 16px; padding: 6px 18px; }
+
+  .courses-content-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
   .courses-benefits { padding: 24px 16px; }
   .courses-benefits-title { font-size: 20px; }
