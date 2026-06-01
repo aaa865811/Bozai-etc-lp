@@ -74,7 +74,7 @@ export default async function handler(req, res) {
 
     // 管理者宛メール
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'ネットスクール税理士講座 <noreply@mail.ns-education.jp>',
       to: process.env.ADMIN_EMAIL,
       subject: `【資料請求】${name} 様${age !== null ? `（${age}歳）` : ''}`,
       html: `
@@ -91,7 +91,7 @@ export default async function handler(req, res) {
 
     // 申込者宛 自動返信メール
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'ネットスクール税理士講座 <noreply@mail.ns-education.jp>',
       to: email,
       subject: '【ネットスクール】資料請求を承りました',
       text: `${name} 様
