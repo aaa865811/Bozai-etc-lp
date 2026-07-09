@@ -101,6 +101,15 @@
       .zt-cards{grid-template-columns:1fr;gap:18px;}
       .zt-desc{min-height:auto;}
     }
+
+    /* ===== 税法講師4名グリッド（共有.inst-cardsを上書き・zeihou専用） ===== */
+    .inst-cards--4{grid-template-columns:repeat(4,1fr);}
+    @media (max-width:1023px) and (min-width:768px){
+      .inst-cards--4{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width:767px){
+      .inst-cards--4{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body id="top">
@@ -637,59 +646,54 @@
         講師自身が教材執筆も担当しているから、講義と教材に一貫性があります。
       </p>
 
-      <!-- 3カード -->
-      <div class="inst-cards">
-        <!-- 中村 雄行 -->
+      <!-- 4カード（税法講師） -->
+      <div class="inst-cards inst-cards--4">
+        <!-- 榊 衣栄 -->
         <div class="inst-card">
-          <img src="/assets/instructor-nakamura.jpg" alt="中村 雄行 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
-          <h3 class="inst-card-name">中村 雄行</h3>
-          <p class="inst-card-career">講師歴 <span class="inst-card-years">35</span>年</p>
+          <img src="/assets/instructor-sakaki.jpg" alt="榊 衣栄 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
+          <h3 class="inst-card-name">榊 衣栄</h3>
+          <p class="inst-card-career">担当：法人税法・相続税法</p>
           <hr class="inst-card-hr">
           <div class="inst-card-quote">
             <span class="inst-card-quote-mark" aria-hidden="true">"</span>
-            <p class="inst-card-quote-text">辛い思いや苦労の先には、必ず幸せな未来が待っています。会計の資格は、生きていくうえで必ず自分を助けてくれる力になります。</p>
+            <p class="inst-card-quote-text">中堅税理士法人や個人会計事務所で長年の実務経験を積み、法律事務も経験した多彩な経歴を持つ講師。「必要な内容をしっかり理解し、自分の言葉で説明できるように」を指導方針に掲げます。受験のつらさも知るからこそ、一つひとつの試練を糧に「楽しんで」学ぶことの大切さを伝えます。</p>
           </div>
-          <ul class="inst-card-history">
-            <li>大手資格学校 簿記1級講師</li>
-            <li>会計事務所 実務4年</li>
-          </ul>
-
         </div>
 
-        <!-- 穂坂 治宏 -->
+        <!-- 山本 和史 -->
         <div class="inst-card">
-          <img src="/assets/instructor-hosaka.jpg" alt="穂坂 治宏 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
-          <h3 class="inst-card-name">穂坂 治宏</h3>
-          <p class="inst-card-career">講師歴 <span class="inst-card-years">22</span>年</p>
+          <img src="/assets/instructor-yamamoto.jpg" alt="山本 和史 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
+          <h3 class="inst-card-name">山本 和史</h3>
+          <p class="inst-card-career">担当：消費税法・相続税法</p>
           <hr class="inst-card-hr">
           <div class="inst-card-quote">
             <span class="inst-card-quote-mark" aria-hidden="true">"</span>
-            <p class="inst-card-quote-text">税理士試験の合格に特別な才能は必要ありません。ただ、学習を継続すること。これが必要かつ十分な唯一の条件です。</p>
+            <p class="inst-card-quote-text">消費税法30年・相続税法18年という長い講師歴を持ち、教科書や問題集の制作にも深く携わる、理論と計算の双方に精通したエキスパート。まず計算を正確に、そこから理論を「理解して説明できる」状態へ導く指導で、多くの合格者を支えてきました。小さな目標の積み重ねが合格につながると説きます。</p>
           </div>
-          <ul class="inst-card-history">
-            <li>税理士</li>
-            <li>「穂坂式」解法テクニック確立</li>
-            <li>著書多数</li>
-          </ul>
-
         </div>
 
-        <!-- 熊取谷 貴志 -->
+        <!-- 小出 富美子 -->
         <div class="inst-card">
-          <img src="/assets/instructor-kumatoriya.webp" alt="熊取谷 貴志 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
-          <h3 class="inst-card-name">熊取谷 貴志</h3>
-          <p class="inst-card-career">講師歴 <span class="inst-card-years">25</span>年</p>
+          <img src="/assets/instructor-koide.jpg" alt="小出 富美子 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
+          <h3 class="inst-card-name">小出 富美子</h3>
+          <p class="inst-card-career">担当：消費税法</p>
           <hr class="inst-card-hr">
           <div class="inst-card-quote">
             <span class="inst-card-quote-mark" aria-hidden="true">"</span>
-            <p class="inst-card-quote-text">税理士試験の簿記論は問題のボリュームが非常に多いですが、難しい箇所に惑わされず、解くべき箇所をしっかり解答していけば合格できる試験です。</p>
+            <p class="inst-card-quote-text">消費税法を中心に税務全般の深い知識を持つ税理士。試験の出題傾向を鋭く分析し、「落としてはいけない問題」を確実に得点する戦略的な指導に定評があります。複雑な消費税の仕組みを身近な例で解説し、効率よく確実に合格へ導きます。</p>
           </div>
-          <ul class="inst-card-history">
-            <li>中央大学商学部出身</li>
-            <li>会計事務所勤務</li>
-            <li>日商簿記1級合格</li>
-          </ul>
+        </div>
 
+        <!-- 堀川 洋 -->
+        <div class="inst-card">
+          <img src="/assets/instructor-horikawa.jpg" alt="堀川 洋 講師" class="inst-card-photo" width="160" height="160" loading="lazy">
+          <h3 class="inst-card-name">堀川 洋</h3>
+          <p class="inst-card-career">担当：国税徴収法</p>
+          <hr class="inst-card-hr">
+          <div class="inst-card-quote">
+            <span class="inst-card-quote-mark" aria-hidden="true">"</span>
+            <p class="inst-card-quote-text">堀川洋税理士事務所・所長。51年という長い講師歴を持ち、実務と指導の両面から受験生を支えます。国税徴収法の複雑な規定も、長年の経験に基づく懇切丁寧な指導で確実に理解へと導きます。座右の銘は「臥薪嘗胆」。</p>
+          </div>
         </div>
       </div>
 
@@ -733,8 +737,8 @@
                 <ellipse cx="105" cy="55" rx="4" ry="6" fill="#DAA520" opacity="0.3" transform="rotate(10 105 55)"/>
               </svg>
             </div>
-            <p class="inst-total-label">講師陣の指導歴合計</p>
-            <p class="inst-total-years">82<span>年</span></p>
+            <p class="inst-total-label">講師陣の最長指導歴</p>
+            <p class="inst-total-years">51<span>年</span></p>
             <p class="inst-total-ribbon">経験と実績の証</p>
           </div>
         </div>
