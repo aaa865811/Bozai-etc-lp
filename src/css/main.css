@@ -1789,7 +1789,15 @@ section {
   .voice-kanpou-thumb { width: 100%; }
   .voice-kanpou-name { font-size: 22px; }
   .voice-card { width: 320px; }
-  .voice-tab-content { grid-template-columns: 1fr; }
+  /* 合格実績タブ：スマホは2枚ずつ横並び（縦幅を圧縮して離脱を防ぐ） */
+  .voice-tab-content { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .voice-tab-content .voice-card { width: auto; }
+  .voice-tab-content .voice-card-avatar { width: 60px; padding: 10px 4px; }
+  .voice-tab-content .voice-card-avatar-circle { width: 40px; height: 40px; font-size: 14px; }
+  .voice-tab-content .voice-card-info { padding: 10px; }
+  .voice-tab-content .voice-card-name { font-size: 13px; }
+  .voice-tab-content .voice-card-attr { font-size: 11px; margin-bottom: 6px; }
+  .voice-tab-content .voice-card-comment { font-size: 12px; }
   .voice-tab { padding: 8px 14px; font-size: 13px; }
   .voice-modal-content { padding: 24px; }
 }
