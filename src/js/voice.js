@@ -2,7 +2,7 @@
 // Section 5: Voice - 官報合格者 + カルーセル + タブ切替 + モーダル
 // ============================================================
 (function () {
-  var DATA_URL = 'data/testimonials.json';
+  var DATA_URL = '/data/testimonials.json';
 
   // --- Helpers ---
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
