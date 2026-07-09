@@ -118,6 +118,52 @@
   </section>
 
   <!-- ============================================================
+       Section 5: 合格体験記
+       - 官報合格者（特別表示）
+       - 2層カルーセル（上段→右、下段→左）
+       - 回次別タブ切替
+       ============================================================ -->
+  <section id="voice" class="voice-section">
+    <span class="voice-en" aria-hidden="true">VOICE</span>
+
+    <div class="voice-inner">
+      <!-- 見出し -->
+      <h2 class="voice-heading">
+        実際に、<span class="voice-marker">合格した人</span>がいます。
+      </h2>
+      <p class="voice-sub">合格率は全国平均の約2倍。あなたの不安に、合格者が答えます。</p>
+
+      <!-- 官報合格者エリア（JSで描画） -->
+      <div id="voice-kanpou"></div>
+
+      <!-- 2層カルーセル -->
+      <div class="voice-carousel-area">
+        <p class="voice-carousel-title">── 合格者の声 ──</p>
+        <p class="voice-carousel-sub">動画と文字、それぞれの合格までの軌跡</p>
+        <div class="voice-carousel-wrap">
+          <div class="voice-carousel-track voice-carousel-upper" id="carousel-upper"></div>
+          <div class="voice-carousel-track voice-carousel-lower" id="carousel-lower"></div>
+        </div>
+      </div>
+
+      <!-- タブ切替エリア -->
+      <div class="voice-tabs-area">
+        <div class="voice-tabs" id="voice-tabs" role="tablist"></div>
+        <div class="voice-tab-content" id="voice-tab-content" role="tabpanel"></div>
+      </div>
+    </div>
+
+    <!-- モーダル（体験記全文） -->
+    <div class="voice-modal" id="voice-modal" aria-hidden="true">
+      <div class="voice-modal-overlay" id="voice-modal-overlay"></div>
+      <div class="voice-modal-content" id="voice-modal-content">
+        <button class="voice-modal-close" id="voice-modal-close" aria-label="閉じる">&times;</button>
+        <div id="voice-modal-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        Section 2: 共感パート（3つの不安）
        - 左：見出し＋背景英字  中央：3カード  右：男性写真
        ============================================================ -->
@@ -390,52 +436,6 @@
             <li>本試験直前まで寄り添う手厚いフォロー体制</li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       Section 5: 合格体験記
-       - 官報合格者（特別表示）
-       - 2層カルーセル（上段→右、下段→左）
-       - 回次別タブ切替
-       ============================================================ -->
-  <section id="voice" class="voice-section">
-    <span class="voice-en" aria-hidden="true">VOICE</span>
-
-    <div class="voice-inner">
-      <!-- 見出し -->
-      <h2 class="voice-heading">
-        実際に、<span class="voice-marker">合格した人</span>がいます。
-      </h2>
-      <p class="voice-sub">合格率は全国平均の約2倍。あなたの不安に、合格者が答えます。</p>
-
-      <!-- 官報合格者エリア（JSで描画） -->
-      <div id="voice-kanpou"></div>
-
-      <!-- 2層カルーセル -->
-      <div class="voice-carousel-area">
-        <p class="voice-carousel-title">── 合格者の声 ──</p>
-        <p class="voice-carousel-sub">動画と文字、それぞれの合格までの軌跡</p>
-        <div class="voice-carousel-wrap">
-          <div class="voice-carousel-track voice-carousel-upper" id="carousel-upper"></div>
-          <div class="voice-carousel-track voice-carousel-lower" id="carousel-lower"></div>
-        </div>
-      </div>
-
-      <!-- タブ切替エリア -->
-      <div class="voice-tabs-area">
-        <div class="voice-tabs" id="voice-tabs" role="tablist"></div>
-        <div class="voice-tab-content" id="voice-tab-content" role="tabpanel"></div>
-      </div>
-    </div>
-
-    <!-- モーダル（体験記全文） -->
-    <div class="voice-modal" id="voice-modal" aria-hidden="true">
-      <div class="voice-modal-overlay" id="voice-modal-overlay"></div>
-      <div class="voice-modal-content" id="voice-modal-content">
-        <button class="voice-modal-close" id="voice-modal-close" aria-label="閉じる">&times;</button>
-        <div id="voice-modal-body"></div>
       </div>
     </div>
   </section>
