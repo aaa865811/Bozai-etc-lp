@@ -4518,3 +4518,52 @@ section {
   color: #c00;
   font-size: 14px;
 }
+
+/* ===== フローティングLINE相談ボタン ===== */
+.line-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #06c755;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(6, 199, 85, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.line-float:hover {
+  background: #05b34c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(6, 199, 85, 0.5);
+  color: #fff;
+}
+
+.line-float-icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .line-float {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px;
+  }
+
+  .line-float-text {
+    display: none;
+  }
+
+  .line-float-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
