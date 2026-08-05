@@ -361,6 +361,16 @@ section {
   background-color: var(--color-primary-light);
 }
 
+.btn-line {
+  background-color: #06c755;
+  color: #fff;
+}
+
+.btn-line:hover {
+  background-color: #05b34c;
+  color: #fff;
+}
+
 .btn-lg {
   font-size: var(--font-size-lg);
   padding: 1em 2.5em;
