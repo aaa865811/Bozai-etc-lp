@@ -52,6 +52,26 @@
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- ===== フッター・サイトマップ（自己完結スタイル） ===== -->
+  <style>
+    .boki-footer{background:#0e2544;color:#cdd7e6;padding:48px 20px 28px;}
+    .boki-footer-inner{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;}
+    .boki-footer-brand{flex:1 1 260px;max-width:340px;}
+    .boki-footer-logo{background:#fff;padding:8px 12px;border-radius:8px;height:auto;}
+    .boki-footer-tagline{margin-top:14px;font-size:13px;line-height:1.8;color:#aebdd2;}
+    .boki-footer-sitemap{flex:2 1 480px;display:flex;flex-wrap:wrap;gap:32px;}
+    .boki-footer-col{flex:1 1 190px;}
+    .boki-footer-col-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:12px;border-left:3px solid #f57c1f;padding-left:8px;}
+    .boki-footer-col ul{list-style:none;margin:0;padding:0;}
+    .boki-footer-col li{margin-bottom:9px;}
+    .boki-footer-col a{color:#cdd7e6;text-decoration:none;font-size:13px;line-height:1.6;transition:color .2s;}
+    .boki-footer-col a:hover{color:#fff;text-decoration:underline;}
+    .boki-footer-copy{max-width:1080px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.12);font-size:12px;color:#8ea0ba;text-align:center;}
+    @media (max-width:640px){
+      .boki-footer-sitemap{flex-basis:100%;gap:24px;}
+    }
+  </style>
 </head>
 <body id="top">
 
@@ -1205,6 +1225,37 @@
       </div>
     </div>
   </section>
+
+  <!-- ============================================================
+       Footer：サイトマップ
+       ============================================================ -->
+  <footer class="boki-footer">
+    <div class="boki-footer-inner">
+      <div class="boki-footer-brand">
+        <img src="assets/logo.png" alt="ネットスクール 税理士講座" width="160" height="43" class="boki-footer-logo">
+        <p class="boki-footer-tagline">簿記2級から、税理士へ。<br>あなたの合格まで、ネットスクールが伴走します。</p>
+      </div>
+      <nav class="boki-footer-sitemap" aria-label="サイトマップ">
+        <div class="boki-footer-col">
+          <p class="boki-footer-col-title">簿財の講座（このページ）</p>
+          <ul>
+            <li><a href="/">簿記論・財務諸表論・簿財一体型 トップ</a></li>
+          </ul>
+        </div>
+        <div class="boki-footer-col">
+          <p class="boki-footer-col-title">税理士試験を受験された方へ</p>
+          <ul>
+            <li><a href="/boki/">合格発表までの次の一手（講座一覧）</a></li>
+            <li><a href="/boki/boki1/">日商簿記1級 合格講座</a></li>
+            <li><a href="/boki/bokiron/">簿記論 標準コース</a></li>
+            <li><a href="/boki/zaihyo/">財務諸表論 標準コース</a></li>
+            <li><a href="/boki/bozai/">簿記論/財務諸表論 一括標準コース</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="boki-footer-copy">© ネットスクール株式会社</p>
+  </footer>
 
   <!-- 資料請求モーダル -->
   <div id="document-request-modal" class="modal">
