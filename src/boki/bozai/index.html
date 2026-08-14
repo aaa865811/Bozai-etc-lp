@@ -38,8 +38,10 @@
 
   <!-- 正規URL・検索エンジン -->
   <link rel="canonical" href="https://zeirishi-lp.ns-education.jp/boki/bozai/">
-  <meta name="robots" content="noindex, follow">
-  <meta name="googlebot" content="noindex, follow">
+  <!-- ▼ 公開前noindex（ステップ4-B）：本番インデックス許可時にこのブロックを削除／content="index,follow"へ ▼ -->
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="googlebot" content="noindex,nofollow">
+  <!-- ▲ 公開前noindex（ステップ4-B）ここまで ▲ -->
   <!-- ===== End SEO & OGP ===== -->
 
   <meta name="theme-color" content="#1E3A8A">
@@ -118,6 +120,12 @@
     }
     @media (max-width:767px){
       .inst-cards--4{grid-template-columns:1fr;}
+    }
+    /* カードの高さを揃え、中身を垂直中央に配置（写真・名前のみのカードでも下余白が目立たないように） */
+    .inst-cards--4 .inst-card{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
     /* ===== 料金表（簿財一括・zt-ptable） ===== */
@@ -254,10 +262,10 @@
     <div class="fv-visual">
       <!-- SP/PC画像切り替え：767px以下でSP版を表示 -->
       <picture>
-        <source media="(max-width: 767px)" srcset="/assets/fv-sp.png" width="941" height="1672">
+        <source media="(max-width: 767px)" srcset="/assets/fv-bozai2-sp.png" width="941" height="1672">
         <img
-          src="/assets/fv-pc.png"
-          alt="ネットスクール税理士講座 - 働きながらでも続けられる"
+          src="/assets/fv-bozai2-pc.png"
+          alt="ネットスクール税理士講座 簿記論・財務諸表論 一括 - 働きながらでも続けられる"
           width="1672"
           height="941"
           loading="eager"
@@ -1010,11 +1018,6 @@
         </div>
 
         <div class="faq-card">
-          <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">簿記論と財務諸表論、どちらから始めるべき？</p><span class="faq-toggle"></span></div>
-          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>迷ったら<span class="faq-hl">簿財一体型コース</span>がおすすめです。</p><p>両科目は学習内容の約50%が共通しているため、別々に学ぶより一体型で同時学習する方が効率的です。</p></div></div></div>
-        </div>
-
-        <div class="faq-card">
           <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">ZOOM学習コンサルは具体的に何ができますか？</p><span class="faq-toggle"></span></div>
           <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>経験豊富な講師との1対1相談で、以下のサポートが受けられます。</p><p>・学習計画の設計・見直し<br>・進捗の確認とアドバイス<br>・苦手分野の克服法<br>・本試験までのスケジュール調整</p><p><span class="faq-hl">何度でも・制限なし</span>でご利用いただけます。</p></div></div></div>
         </div>
@@ -1276,14 +1279,6 @@
     <div class="loading-spinner"></div>
     <p class="loading-text">送信中...</p>
   </div>
-
-  <!-- フローティングLINE相談ボタン -->
-  <a href="https://lin.ee/sCrTr2D" target="_blank" rel="noopener noreferrer" class="line-float" aria-label="LINEで相談する（新しいタブで開く）">
-    <svg class="line-float-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2C6.477 2 2 5.79 2 10.46c0 4.18 3.55 7.68 8.35 8.34.325.07.767.214.879.492.1.252.065.647.032.902l-.142.854c-.043.252-.2.987.865.538 1.066-.45 5.752-3.388 7.848-5.8C21.216 14.15 22 12.41 22 10.46 22 5.79 17.523 2 12 2zM7.69 13.06H5.7a.53.53 0 01-.527-.527V8.55a.53.53 0 011.054 0v3.456H7.69a.527.527 0 010 1.054zm2.063-.527a.53.53 0 01-1.054 0V8.55a.53.53 0 011.054 0v3.983zm4.783 0a.527.527 0 01-.361.5.55.55 0 01-.167.026.52.52 0 01-.425-.21l-2.04-2.776v2.46a.527.527 0 01-1.054 0V8.55a.527.527 0 01.36-.5.53.53 0 01.593.184l2.04 2.777V8.55a.527.527 0 011.054 0v3.983zm3.216-2.518a.527.527 0 010 1.054h-1.46v.937h1.46a.527.527 0 010 1.054h-1.987a.53.53 0 01-.527-.527V8.55a.53.53 0 01.527-.527h1.987a.527.527 0 010 1.054h-1.46v.937h1.46z"/>
-    </svg>
-    <span class="line-float-text">LINEで相談する</span>
-  </a>
 
   <script src="/js/main.js"></script>
   <script src="/js/voice.js"></script>

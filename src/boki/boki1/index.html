@@ -38,8 +38,10 @@
 
   <!-- 正規URL・検索エンジン -->
   <link rel="canonical" href="https://zeirishi-lp.ns-education.jp/boki/boki1/">
-  <meta name="robots" content="noindex, follow">
-  <meta name="googlebot" content="noindex, follow">
+  <!-- ▼ 公開前noindex（ステップ4-B）：本番インデックス許可時にこのブロックを削除／content="index,follow"へ ▼ -->
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="googlebot" content="noindex,nofollow">
+  <!-- ▲ 公開前noindex（ステップ4-B）ここまで ▲ -->
   <!-- ===== End SEO & OGP ===== -->
 
   <meta name="theme-color" content="#1E3A8A">
@@ -166,6 +168,49 @@
     .inst-q-lead{display:block;margin-bottom:8px;color:#1e3a8a;font-weight:700;font-size:15px;line-height:1.5;}
     .inst-q-mark{background:linear-gradient(transparent 60%,#ffd400 60%);font-weight:700;padding:0 1px;}
 
+    /* ===== サポート体制（ZOOM＋LINE 2本柱＋質問窓口） ===== */
+    .sup-section{position:relative;padding:80px 20px;background:#f4f7fc;overflow:hidden;}
+    .sup-en{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-family:"Arial Black",sans-serif;font-size:clamp(48px,12vw,140px);font-weight:800;color:#e9f0f9;letter-spacing:.08em;z-index:0;pointer-events:none;line-height:1;}
+    .sup-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;}
+    .sup-heading{text-align:center;font-size:clamp(23px,5vw,34px);font-weight:800;color:#1a3a6b;line-height:1.45;margin-bottom:20px;}
+    .sup-marker{background:linear-gradient(transparent 58%,#ffe082 58%);padding:0 2px;}
+    .sup-lead{max-width:760px;margin:0 auto 40px;font-size:15px;line-height:2;color:#334155;text-align:center;}
+    .sup-lead strong{color:#1a3a6b;font-weight:700;}
+
+    .sup-pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px;}
+    .sup-pillar{background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 10px 30px rgba(26,58,107,.10);border-top:5px solid #1a3a6b;display:flex;flex-direction:column;}
+    .sup-pillar--line{border-top-color:#06C755;}
+    .sup-pillar-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+    .sup-pillar-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#1a3a6b;color:#fff;font-size:26px;flex-shrink:0;}
+    .sup-pillar--line .sup-pillar-icon{background:#06C755;}
+    .sup-pillar-tag{font-size:13px;font-weight:700;color:#1a3a6b;background:#eaf0f9;padding:5px 13px;border-radius:999px;}
+    .sup-pillar--line .sup-pillar-tag{color:#06913f;background:#e5f7ec;}
+    .sup-pillar-title{font-size:20px;font-weight:800;color:#1a3a6b;margin-bottom:12px;line-height:1.4;}
+    .sup-pillar-by{display:inline-block;margin-left:8px;font-size:12px;font-weight:700;color:#fff;background:#1a3a6b;padding:3px 10px;border-radius:999px;vertical-align:middle;}
+    .sup-pillar--line .sup-pillar-by{background:#06C755;}
+    .sup-pillar-text{font-size:14.5px;line-height:1.95;color:#334155;flex:1;margin:0;}
+    .sup-pillar-badge{margin-top:16px;align-self:flex-start;font-size:13px;font-weight:800;color:#c2610c;background:#fff7ed;border:1px solid #f4c99a;padding:8px 16px;border-radius:999px;}
+    .sup-pillar-badge::before{content:"✓ ";}
+
+    .sup-desk{background:#fff;border-radius:16px;padding:30px 28px;box-shadow:0 10px 30px rgba(26,58,107,.08);margin-bottom:30px;border:1px solid #e3ebf5;}
+    .sup-desk-title{font-size:19px;font-weight:800;color:#1a3a6b;text-align:center;margin-bottom:10px;}
+    .sup-desk-lead{font-size:14px;line-height:1.9;color:#334155;text-align:center;max-width:720px;margin:0 auto 22px;}
+    .sup-desk-ways{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    .sup-way{text-align:center;padding:18px 12px;background:#f7f9fc;border-radius:12px;border:1px solid #eef2f8;}
+    .sup-way-icon{font-size:26px;display:block;margin-bottom:8px;}
+    .sup-way-name{font-size:15px;font-weight:700;color:#1a3a6b;margin-bottom:3px;}
+    .sup-way-desc{font-size:12px;color:#6b7690;}
+
+    .sup-closing{max-width:760px;margin:0 auto;font-size:15px;line-height:2;color:#334155;text-align:center;}
+    .sup-closing strong{color:#1a3a6b;font-weight:700;}
+    .sup-closing-strong{font-weight:800;color:#c2610c;}
+
+    @media (max-width:767px){
+      .sup-section{padding:56px 16px;}
+      .sup-pillars{grid-template-columns:1fr;gap:16px;}
+      .sup-desk-ways{grid-template-columns:1fr;gap:12px;}
+    }
+
     /* ===== フッター・サイトマップ ===== */
     .boki-footer{background:#0e2544;color:#cdd7e6;padding:48px 20px 28px;}
     .boki-footer-inner{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;}
@@ -233,9 +278,9 @@
     <div class="fv-visual">
       <!-- SP/PC画像切り替え：767px以下でSP版を表示 -->
       <picture>
-        <source media="(max-width: 767px)" srcset="/assets/fv-sp.png" width="941" height="1672">
+        <source media="(max-width: 767px)" srcset="/assets/fv-boki1-sp.png" width="941" height="1672">
         <img
-          src="/assets/fv-pc.png"
+          src="/assets/fv-boki1-pc.png"
           alt="ネットスクール税理士講座 - 働きながらでも続けられる"
           width="1672"
           height="941"
@@ -378,12 +423,12 @@
             <span class="heading-line"><span class="answer-marker">こう答えます</span>。</span>
           </h2>
           <p class="answer-sub">
-            その答えは、<span class="answer-marker">ZOOM学習コンサル</span>。<br>
-            経験豊富な講師が、あなたに合った合格プランを設計します。
+            その答えは、<span class="answer-marker">ZOOM学習コンサル</span>と<span class="answer-marker">LINE相談</span>。<br>
+            じっくりも気軽も。経験豊富な講師が、あなたに合った合格プランを設計します。
           </p>
         </div>
         <div class="answer-visual">
-          <img src="/assets/section3-visual.png" alt="ZOOM学習コンサルの様子" class="answer-visual-img" width="640" height="427" loading="lazy">
+          <img src="/assets/section3-visual.png" alt="ZOOM学習コンサル・LINE相談で講師に相談する様子" class="answer-visual-img" width="640" height="427" loading="lazy">
         </div>
       </div>
 
@@ -402,7 +447,7 @@
             <span class="answer-card-label">能力の不安へ</span>
             <h3 class="answer-card-title">経験豊富な講師が、<br>あなたの現在地を診断</h3>
             <hr class="answer-card-hr">
-            <p class="answer-card-text">簿財で培った力を土台に、<strong>ZOOM学習コンサル</strong>で最適なプランを一緒に設計。1級を「別次元」と感じる前に、一歩目を講師と確認できます。</p>
+            <p class="answer-card-text">簿財で培った力を土台に、<strong>ZOOM学習コンサル</strong>で最適なプランを一緒に設計。ふと浮かんだ疑問は<strong>LINE相談</strong>ですぐ講師に。1級を「別次元」と感じる前に、一歩目を確認できます。</p>
           </div>
         </div>
 
@@ -446,12 +491,83 @@
       <div class="answer-cta">
         <p class="answer-cta-caption">
           <span class="answer-cta-line" aria-hidden="true"></span>
-          ZOOM学習コンサルが、あなたの合格まで伴走します。
+          ZOOMとLINE、2つの相談窓口が、あなたの合格まで伴走します。
           <span class="answer-cta-line" aria-hidden="true"></span>
         </p>
         <span class="answer-cta-arrow" aria-hidden="true">↓</span>
-        <a href="#final-cta" class="answer-cta-btn">詳しい学習コンサルを見る →</a>
+        <a href="#support" class="answer-cta-btn">サポート体制をくわしく見る →</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section: サポート体制（ZOOM＋LINE 2本柱＋質問窓口）
+       - 大見出し＋リード
+       - ZOOM（講師）／LINE（講師）を対で大きく
+       - スタッフ＋講師の質問窓口（掲示板／メール／電話）
+       - 締めメッセージ
+       ============================================================ -->
+  <section id="support" class="sup-section">
+    <span class="sup-en" aria-hidden="true">SUPPORT</span>
+    <div class="sup-inner">
+      <h2 class="sup-heading">独学じゃない。<span class="sup-marker">講師が、すぐそばにいる。</span></h2>
+      <p class="sup-lead">
+        税理士試験で簿記論・財務諸表論を学んだ、あなただからこそ。日商1級の商業簿記・会計学は、その知識がそのまま活きます。あとは勝手の違う<strong>工業簿記・原価計算</strong>を、納得いくまで潰すだけ。独学で抱え込みがちなその疑問を、<strong>ZOOM</strong>と<strong>LINE</strong>で講師にすぐ相談できます。
+      </p>
+
+      <!-- 2本柱：ZOOM／LINE -->
+      <div class="sup-pillars">
+        <!-- ZOOM -->
+        <div class="sup-pillar sup-pillar--zoom">
+          <div class="sup-pillar-head">
+            <span class="sup-pillar-icon" aria-hidden="true">🎥</span>
+            <span class="sup-pillar-tag">じっくり相談したいとき</span>
+          </div>
+          <h3 class="sup-pillar-title">ZOOM学習コンサル<span class="sup-pillar-by">講師が対応</span></h3>
+          <p class="sup-pillar-text">じっくり相談したいときは、ZOOM学習コンサル。経験豊富な講師と1対1で、学習計画の設計から進捗の確認、苦手分野の攻略法まで。あなたの現在地から、1級合格までの最短ルートを一緒に描きます。</p>
+          <p class="sup-pillar-badge">何度でも、制限なく</p>
+        </div>
+
+        <!-- LINE -->
+        <div class="sup-pillar sup-pillar--line">
+          <div class="sup-pillar-head">
+            <span class="sup-pillar-icon" aria-hidden="true">💬</span>
+            <span class="sup-pillar-tag">今すぐ聞きたいとき</span>
+          </div>
+          <h3 class="sup-pillar-title">LINE相談<span class="sup-pillar-by">講師が対応</span></h3>
+          <p class="sup-pillar-text">今すぐ聞きたいときは、LINE相談。勉強中にふと浮かんだ疑問を、その場で講師にLINEで。日々のちょっとしたつまずきも、学習の悩みも気軽に。</p>
+          <p class="sup-pillar-badge">こちらも回数制限なし</p>
+        </div>
+      </div>
+
+      <!-- もう一段のサポート：スタッフ＋講師 質問窓口 -->
+      <div class="sup-desk">
+        <p class="sup-desk-title">聞き方は、あなたの自由。</p>
+        <p class="sup-desk-lead">質問掲示板・メール・電話でも、スタッフがあなたの質問を受け付けます。専門的な内容は、講師が直接回答することも。どんな聞き方でも、あなたのつまずきを放っておきません。</p>
+        <div class="sup-desk-ways">
+          <div class="sup-way">
+            <span class="sup-way-icon" aria-hidden="true">📋</span>
+            <p class="sup-way-name">質問掲示板</p>
+            <p class="sup-way-desc">いつでも書き込みOK</p>
+          </div>
+          <div class="sup-way">
+            <span class="sup-way-icon" aria-hidden="true">📧</span>
+            <p class="sup-way-name">メール</p>
+            <p class="sup-way-desc">24時間受付</p>
+          </div>
+          <div class="sup-way">
+            <span class="sup-way-icon" aria-hidden="true">📞</span>
+            <p class="sup-way-name">電話</p>
+            <p class="sup-way-desc">平日 10:00-18:00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 締め -->
+      <p class="sup-closing">
+        そして、講師もスタッフも全員が、<strong>受験経験者</strong>。あなたのつまずきも、不安も、通ってきた道だからこそ、的確に応えられます。<br>
+        じっくりのZOOM、気軽のLINE、いつでも聞ける質問窓口——<span class="sup-closing-strong">あなたを、一人にしません。</span>
+      </p>
     </div>
   </section>
 
@@ -666,8 +782,8 @@
         <div class="courses-benefits-grid">
           <div class="courses-benefit">
             <div class="courses-benefit-icon"><svg viewBox="0 0 32 32" fill="none" width="24" height="24"><circle cx="16" cy="16" r="12" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#fff"/><line x1="16" y1="4" x2="16" y2="8" stroke="#fff" stroke-width="2"/><line x1="16" y1="24" x2="16" y2="28" stroke="#fff" stroke-width="2"/></svg></div>
-            <p class="courses-benefit-name">ZOOM学習コンサル</p>
-            <p class="courses-benefit-desc">経験豊富な講師との1対1相談</p>
+            <p class="courses-benefit-name">ZOOM＋LINEで相談</p>
+            <p class="courses-benefit-desc">講師に何度でも・制限なし</p>
           </div>
           <div class="courses-benefit">
             <div class="courses-benefit-icon"><svg viewBox="0 0 32 32" fill="none" width="24" height="24"><rect x="4" y="6" width="24" height="16" rx="2" stroke="#fff" stroke-width="2"/><polygon points="13,11 13,19 21,15" fill="#fff"/></svg></div>
@@ -793,7 +909,7 @@
               <div class="inst-feature-icon">
                 <svg viewBox="0 0 32 32" fill="none" width="24" height="24"><circle cx="16" cy="12" r="5" stroke="#fff" stroke-width="2"/><path d="M6 28c0-6 4-10 10-10s10 4 10 10" stroke="#fff" stroke-width="2"/><path d="M24 8l4-4m-6 2l2-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
               </div>
-              <p class="inst-feature-name">ZOOM学習コンサル</p>
+              <p class="inst-feature-name">ZOOM＋LINEで相談</p>
               <p class="inst-feature-desc">講師に直接相談できる</p>
             </div>
           </div>
@@ -865,7 +981,7 @@
       <div class="cur-zoom-line">
         <div class="cur-zoom-label">
           <span class="cur-zoom-icon" aria-hidden="true">📞</span>
-          ZOOM学習コンサル
+          ZOOM・LINEで相談
         </div>
         <div class="cur-zoom-points">
           <span class="cur-zoom-point">学習開始時</span>
@@ -882,8 +998,8 @@
           <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><circle cx="16" cy="12" r="5" stroke="#fff" stroke-width="2"/><path d="M6 28c0-6 4-10 10-10s10 4 10 10" stroke="#fff" stroke-width="2"/><path d="M24 8l4-4m-6 2l2-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
         <div class="cur-zoom-banner-text">
-          <p class="cur-zoom-banner-main">ZOOM学習コンサルは <span class="cur-marker-strong">何度でも・制限なし</span>でご利用いただけます!</p>
-          <p class="cur-zoom-banner-sub">学習計画の相談、進捗確認、苦手克服のアドバイスなど、合格まで徹底的にサポートします。</p>
+          <p class="cur-zoom-banner-main">ZOOM学習コンサルもLINE相談も <span class="cur-marker-strong">何度でも・制限なし</span>でご利用いただけます!</p>
+          <p class="cur-zoom-banner-sub">学習計画の相談、進捗確認、苦手克服のアドバイスまで。じっくり相談はZOOM、すぐ聞きたいときはLINEで、合格まで徹底的にサポートします。</p>
         </div>
       </div>
 
@@ -924,27 +1040,27 @@
       <div class="faq-list">
         <div class="faq-card is-open">
           <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">簿財を学んだレベルで、日商簿記1級についていけますか？</p><span class="faq-toggle"></span></div>
-          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>はい、まったく問題ありません。</p><p>簿財で学んだ商業簿記・会計学の知識は、日商1級にそのまま活きます。本講座は、1級で新たに必要となる<span class="faq-hl">連結会計</span>や<span class="faq-hl">工業簿記・原価計算</span>を重点的に固める構成です。</p><p>さらに、<span class="faq-hl">ZOOM学習コンサル</span>で、あなたの現状に合わせた<span class="faq-hl">最適な学習プラン</span>を講師が一緒に設計します。</p></div></div></div>
+          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>はい、まったく問題ありません。</p><p>簿財で学んだ商業簿記・会計学の知識は、日商1級にそのまま活きます。本講座は、1級で新たに必要となる<span class="faq-hl">連結会計</span>や<span class="faq-hl">工業簿記・原価計算</span>を重点的に固める構成です。</p><p>さらに、<span class="faq-hl">ZOOM学習コンサル</span>で、あなたの現状に合わせた<span class="faq-hl">最適な学習プラン</span>を講師が一緒に設計。学習中の細かな疑問は<span class="faq-hl">LINE相談</span>で講師にすぐ聞けるので、独学のように抱え込みません。</p></div></div></div>
         </div>
 
         <div class="faq-card">
           <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">仕事と両立できますか？1日どれくらい勉強が必要？</p><span class="faq-toggle"></span></div>
-          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>合格者の多くが、<span class="faq-hl">働きながら合格</span>しています。</p><p>標準的な目安は平日1〜2時間、週末3時間程度。ただし、あなたの生活スタイルに合わせた学習スケジュールを、ZOOM学習コンサルで一緒に設計しますので、<span class="faq-hl">無理なく続けられます</span>。</p><p>24時間オンデマンド配信なので、スキマ時間を有効活用できます。</p></div></div></div>
+          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>合格者の多くが、<span class="faq-hl">働きながら合格</span>しています。</p><p>標準的な目安は平日1〜2時間、週末3時間程度。ただし、あなたの生活スタイルに合わせた学習スケジュールを、<span class="faq-hl">ZOOM学習コンサル</span>で一緒に設計。日々のちょっとした疑問は<span class="faq-hl">LINE相談</span>ですぐ講師に聞けるので、<span class="faq-hl">無理なく続けられます</span>。</p><p>24時間オンデマンド配信なので、スキマ時間を有効活用できます。</p></div></div></div>
         </div>
 
         <div class="faq-card">
-          <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">ZOOM学習コンサルは具体的に何ができますか？</p><span class="faq-toggle"></span></div>
-          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>経験豊富な講師との1対1相談で、以下のサポートが受けられます。</p><p>・学習計画の設計・見直し<br>・進捗の確認とアドバイス<br>・苦手分野の克服法<br>・本試験までのスケジュール調整</p><p><span class="faq-hl">何度でも・制限なし</span>でご利用いただけます。</p></div></div></div>
+          <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">ZOOMとLINE、それぞれどう使えますか？</p><span class="faq-toggle"></span></div>
+          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>じっくり相談したいときは<span class="faq-hl">ZOOM学習コンサル</span>。経験豊富な講師と1対1で、学習計画の設計・見直し／進捗の確認／苦手分野の克服法／本試験までのスケジュール調整まで対応します。</p><p>今すぐ聞きたいときは<span class="faq-hl">LINE相談</span>。勉強中にふと浮かんだ疑問を、その場で講師にLINEで。日々のちょっとしたつまずきも気軽に相談できます。</p><p>どちらも講師が対応し、<span class="faq-hl">何度でも・制限なし</span>。さらに質問掲示板・メール・電話でもスタッフが受け付けます。</p></div></div></div>
         </div>
 
         <div class="faq-card">
           <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">途中で挫折しないか心配です。何か対策はありますか？</p><span class="faq-toggle"></span></div>
-          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>ネットスクールには、<span class="faq-hl">挫折を防ぐ仕組み</span>が整っています。</p><p>・ZOOM学習コンサルで定期的にチェック<br>・学び舎（受講生コミュニティ）で仲間と励まし合い<br>・双方向ライブ講義で疑問をその場で解決<br>・<span class="faq-hl">税理士講座2万円割引</span>（検定後の申込で適用）</p></div></div></div>
+          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>ネットスクールには、<span class="faq-hl">挫折を防ぐ仕組み</span>が整っています。</p><p>・ZOOM学習コンサル／LINE相談で、講師が定期的にチェック<br>・質問掲示板・メール・電話でも、スタッフがいつでも対応<br>・学び舎（受講生コミュニティ）で仲間と励まし合い<br>・双方向ライブ講義で疑問をその場で解決<br>・<span class="faq-hl">税理士講座2万円割引</span>（検定後の申込で適用）</p></div></div></div>
         </div>
 
         <div class="faq-card">
           <div class="faq-q"><span class="faq-q-mark">Q</span><p class="faq-q-text">他校で勉強していたのですが、途中から受講できますか？</p><span class="faq-toggle"></span></div>
-          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>はい、可能です。</p><p>他校での学習状況をZOOM学習コンサルでヒアリングし、あなたに最適なスタート地点と学習プランをご提案します。これまでの学習を活かしながら、<span class="faq-hl">最短ルート</span>で合格を目指しましょう。</p></div></div></div>
+          <div class="faq-a"><hr class="faq-a-hr"><div class="faq-a-body"><span class="faq-a-mark">A</span><div class="faq-a-text"><p>はい、可能です。</p><p>他校での学習状況を<span class="faq-hl">ZOOM学習コンサル</span>でヒアリングし、あなたに最適なスタート地点と学習プランをご提案します。学習を始めてからの細かな疑問も、<span class="faq-hl">LINE相談</span>で講師にすぐ確認できます。これまでの学習を活かしながら、<span class="faq-hl">最短ルート</span>で合格を目指しましょう。</p></div></div></div>
         </div>
       </div>
 
@@ -960,8 +1076,8 @@
         <div class="faq-support-grid">
           <div class="faq-support-item">
             <div class="faq-support-item-icon"><svg viewBox="0 0 32 32" fill="none" width="24" height="24"><circle cx="16" cy="12" r="5" stroke="#1e3a8a" stroke-width="2"/><path d="M8 28c0-5 3-8 8-8s8 3 8 8" stroke="#1e3a8a" stroke-width="2"/></svg></div>
-            <p class="faq-support-item-name">ZOOM学習コンサル</p>
-            <p class="faq-support-item-desc">何度でも・制限なし<br>いつでも相談OK!</p>
+            <p class="faq-support-item-name">ZOOM＋LINEで相談</p>
+            <p class="faq-support-item-desc">講師に何度でも・制限なし<br>じっくりも気軽も相談OK!</p>
           </div>
           <div class="faq-support-item">
             <div class="faq-support-item-icon"><svg viewBox="0 0 32 32" fill="none" width="24" height="24"><circle cx="11" cy="14" r="4" stroke="#1e3a8a" stroke-width="2"/><circle cx="21" cy="14" r="4" stroke="#1e3a8a" stroke-width="2"/><path d="M5 26c0-4 2-6 6-6 2 0 3 .5 5 2 2-1.5 3-2 5-2 4 0 6 2 6 6" stroke="#1e3a8a" stroke-width="2"/></svg></div>
@@ -997,7 +1113,7 @@
 
     <div class="fcta-inner">
       <h2 class="fcta-heading"><span class="fcta-heading-sm">今日が、</span><br>新しいスタートライン。</h2>
-      <p class="fcta-sub">迷っている時間も、勉強できる時間。<br>ZOOM学習コンサルの講師が、あなたを待っています。</p>
+      <p class="fcta-sub">迷っている時間も、勉強できる時間。<br>ZOOMとLINEで、講師があなたを待っています。</p>
 
       <!-- 日商1級 単一CTAカード -->
       <div class="boki1-cta-card">
@@ -1032,8 +1148,8 @@
         </div>
         <div class="fcta-trust-item">
           <div class="fcta-trust-icon">📞</div>
-          <p class="fcta-trust-name">ZOOM学習コンサル</p>
-          <p class="fcta-trust-desc">いつでも相談OK</p>
+          <p class="fcta-trust-name">ZOOM＋LINEで相談</p>
+          <p class="fcta-trust-desc">いつでも講師に質問OK</p>
         </div>
       </div>
 
@@ -1187,14 +1303,6 @@
     <div class="loading-spinner"></div>
     <p class="loading-text">送信中...</p>
   </div>
-
-  <!-- フローティングLINE相談ボタン -->
-  <a href="https://lin.ee/sCrTr2D" target="_blank" rel="noopener noreferrer" class="line-float" aria-label="LINEで相談する（新しいタブで開く）">
-    <svg class="line-float-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2C6.477 2 2 5.79 2 10.46c0 4.18 3.55 7.68 8.35 8.34.325.07.767.214.879.492.1.252.065.647.032.902l-.142.854c-.043.252-.2.987.865.538 1.066-.45 5.752-3.388 7.848-5.8C21.216 14.15 22 12.41 22 10.46 22 5.79 17.523 2 12 2zM7.69 13.06H5.7a.53.53 0 01-.527-.527V8.55a.53.53 0 011.054 0v3.456H7.69a.527.527 0 010 1.054zm2.063-.527a.53.53 0 01-1.054 0V8.55a.53.53 0 011.054 0v3.983zm4.783 0a.527.527 0 01-.361.5.55.55 0 01-.167.026.52.52 0 01-.425-.21l-2.04-2.776v2.46a.527.527 0 01-1.054 0V8.55a.527.527 0 01.36-.5.53.53 0 01.593.184l2.04 2.777V8.55a.527.527 0 011.054 0v3.983zm3.216-2.518a.527.527 0 010 1.054h-1.46v.937h1.46a.527.527 0 010 1.054h-1.987a.53.53 0 01-.527-.527V8.55a.53.53 0 01.527-.527h1.987a.527.527 0 010 1.054h-1.46v.937h1.46z"/>
-    </svg>
-    <span class="line-float-text">LINEで相談する</span>
-  </a>
 
   <script src="/js/main.js"></script>
   <script src="/js/voice.js"></script>
